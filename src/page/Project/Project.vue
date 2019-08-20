@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    <page-header></page-header>
+  <div class="project">
   </div>
 </template>
 

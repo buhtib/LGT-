@@ -1,10 +1,32 @@
 <template>
   <div class="page-header">
     <div class="container section">
+      <div class="page-header-intro">
+        <div class="page-header-intro_logo">
+          <img src="" alt="logo" class="img_cover" />
+        </div>
+        <ul class="page-header-intro_area">
+          <li>
+            <span class="line"></span>
+            <span class="txt">用设计塑造品牌价值</span>
+            <span class="line"></span>
+          </li>
+          <li>
+            邮箱：1019114350@qq.com &nbsp;&nbsp; &nbsp; &nbsp;
+            电话/微信：18219082540
+          </li>
+        </ul>
+      </div>
+
       <div class="row align-items-center">
-        <router-link  class="col-xl" v-for="(tab, i) in navList" :key="i"  :to="tab.path">
+        <router-link
+          class="col-xl"
+          v-for="(tab, i) in navList"
+          :key="i"
+          :to="tab.path"
+        >
           {{ tab.name }}
-        </router-link >
+        </router-link>
       </div>
     </div>
   </div>
@@ -34,11 +56,52 @@ export default {
   top: 0;
   width: 100%;
   background-color: #eee;
+  .page-header-intro {
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    .page-header-intro_logo {
+      width: 20%;
+      height: 100%;
+    }
+    .page-header-intro_area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
+      height: 100%;
+
+      > li {
+        &:first-of-type {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          .line {
+            flex:1;
+            height: 1px;
+            background-color: #666;
+          }
+          .txt {
+            margin: 0 8px;
+          }
+        }
+        &:last-of-type {
+          margin-top: 10px;
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
   .row {
     height: 50px;
-  }
-  .col-xl {
-    text-align: center;
+    .col-xl {
+      padding: 10px 5px;
+      text-align: center;
+    }
   }
 }
 </style>
