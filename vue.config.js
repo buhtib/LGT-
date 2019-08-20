@@ -52,17 +52,17 @@ module.exports = {
          * 而且预渲染时生成的prefetch标签是modern版本的，低版本浏览器是不需要的
          */
         config.plugins.delete('prefetch')
-        /**
-         * 它的作用是阻止标签元素间生成空白内容
-         */
+            /**
+             * 它的作用是阻止标签元素间生成空白内容
+             */
         config.module
-        .rule('vue')
-        .use('vue-loader')
-          .loader('vue-loader')
-          .tap(options => {
-              Object.assign(options.compilerOptions, { preserveWhitespace: true })
-            return options
-          })
+            .rule('vue')
+            .use('vue-loader')
+            .loader('vue-loader')
+            .tap(options => {
+                Object.assign(options.compilerOptions, { preserveWhitespace: true })
+                return options
+            })
     },
     devServer: {
         proxy: {
@@ -70,6 +70,7 @@ module.exports = {
                 "target": "http://120.79.160.28",
                 "changeOrigin": true,
                 ws: true,
+                port: 8080, // 端口
                 pathRewrite: {
                     '^/api': ''
                 }

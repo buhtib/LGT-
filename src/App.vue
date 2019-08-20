@@ -4,6 +4,12 @@
   </div>
 </template>
 
+<script>
+export default {
+   name:'app',
+}
+</script>
+
 <style lang="less">
 @import './style/base.less';
 @import './style/global.less';
