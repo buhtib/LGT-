@@ -12,12 +12,7 @@ const NotFound = () =>
 let routes = [{
         path: '/',
         name: 'home',
-        component: () => import( /* webpackChunkName: "page" */ '@/views/Home.vue')
-    },
-    {
-        path: '/about',
-        name: 'about',
-        component: () => import( /* webpackChunkName: "page" */ '@/views/About.vue')
+        component: () => import( /* webpackChunkName: "page" */ '@/page/Home/Home.vue')
     },
     {
         name: '404',
