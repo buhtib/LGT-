@@ -37,5 +37,8 @@ export default {
   .row {
     height: 50px;
   }
+  .col-xl {
+    text-align: center;
+  }
 }
 </style>
