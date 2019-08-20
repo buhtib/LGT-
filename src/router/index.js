@@ -9,10 +9,31 @@ const NotFound = () =>
     import( /* webpackChunkName: "page" */ '@/components/notFound.vue');
 
 
-let routes = [{
+let routes = [
+    {
         path: '/',
         name: 'home',
         component: () => import( /* webpackChunkName: "page" */ '@/page/Home/Home.vue')
+    },
+    {
+        path: '/brand',
+        name: 'brand',
+        component: () => import( /* webpackChunkName: "page" */ '@/page/Brand/Brand.vue')
+    },
+    {
+        path: '/service',
+        name: 'service',
+        component: () => import( /* webpackChunkName: "page" */ '@/page/Service/Service.vue')
+    },
+    {
+        path: '/project',
+        name: 'project',
+        component: () => import( /* webpackChunkName: "page" */ '@/page/Project/Project.vue')
+    },
+    {
+        path: '/linkus',
+        name: 'linkUs',
+        component: () => import( /* webpackChunkName: "page" */ '@/page/LinkUs/LinkUs.vue')
     },
     {
         name: '404',
