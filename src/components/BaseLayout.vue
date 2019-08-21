@@ -3,7 +3,7 @@
     <div class="base-layout">
         <page-header></page-header>
         <transition
-            enter-active-class="animated fadeInUp"
+            enter-active-class="animated fadeIn"
         >
             <router-view></router-view>
         </transition>
