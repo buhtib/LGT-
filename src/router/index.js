@@ -12,13 +12,13 @@ const NotFound = () =>
 let routes = [
     {
         path: '/',
-        component: () => import( /* webpackChunkName: "page" */ '@/page/Home/Home.vue'),
+        component: () => import( /* webpackChunkName: "page" */ '@/components/BaseLayout.vue'),
         redirect:'/home',
         children:[
             {
                 path: '/home',
                 name: 'home',
-                component: () => import( /* webpackChunkName: "page" */ '@/page/Home/HomePage.vue')
+                component: () => import( /* webpackChunkName: "page" */ '@/page/Home/Home.vue')
             },
             {
                 path: '/brand',
