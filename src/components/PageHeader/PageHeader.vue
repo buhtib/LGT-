@@ -1,6 +1,6 @@
 <!-- 公共头部  -->
 <template>
-  <div class="page-header">
+  <div class="page-header sticky-top">
     <div class=" section">
       <div class="page-header-intro">
         <div class="page-header-intro_logo">
@@ -21,10 +21,11 @@
 
       <div class="row align-items-center">
         <router-link
-          class="col-xl"
+          class="col-xl "
           v-for="(tab, i) in navList"
           :key="i"
           :to="tab.path"
+          exact
         >
           {{ tab.name }}
         </router-link>
@@ -39,7 +40,7 @@ export default {
   data() {
     return {
       navList: [
-        { name: "首页", path: "/" },
+        { name: "首页", path: "/home" },
         { name: "LGT创意", path: "/brand" },
         { name: "服务范围", path: "/service" },
         { name: "LGT项目", path: "/project" },
@@ -53,8 +54,8 @@ export default {
 <style lang="less" scoped>
 .page-header {
   //默认会relative 但能有fixed效果
-  position: sticky;
-  top: 0;
+//   position: sticky;
+//   top: 0;
   width: 100%;
   background-color: #eee;
   .page-header-intro {

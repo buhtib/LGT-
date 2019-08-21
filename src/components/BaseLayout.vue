@@ -2,19 +2,23 @@
 <template>
     <div class="base-layout">
         <page-header></page-header>
+        <transition
+            enter-active-class="animated fadeInUp"
+        >
             <router-view></router-view>
+        </transition>
         <page-footer></page-footer>
     </div>
 </template>
 
 <script>
 export default {
-    name:'BaseLayout'
-}
+    name: "BaseLayout"
+};
 </script>
 
 <style lang="less" scoped>
-    .base-layout {
-        width: 100%;
-    }
+.base-layout {
+    width: 100%;
+}
 </style>

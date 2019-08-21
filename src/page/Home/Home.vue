@@ -1,13 +1,18 @@
 <!-- 首页-->
 <template>
   <div class="home">
-
+    <carousel />
   </div>
 </template>
 
 <script>
+import Carousel from './Carousel'
+
 export default {
-    name:'Home'
+    name:'Home',
+    components:{
+        Carousel
+    }
 }
 </script>
 
