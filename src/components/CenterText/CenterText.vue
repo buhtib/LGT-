@@ -1,5 +1,5 @@
 <template>
-  <div class="center-text">
+  <div class="center-text" v-if="centerText">
     <div class="header">{{centerText.header}}</div>
     <div class="center"></div>
     <div class="bottom">{{centerText.bottom}}</div>

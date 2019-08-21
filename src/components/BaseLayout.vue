@@ -3,7 +3,7 @@
   <div class="base-layout">
     <page-header></page-header>
     <!-- 中间文字 -->
-    <center-text :centerText="centerText"/>
+    <center-text :centerText="$route.meta.centerText"  />
 
     <transition enter-active-class="animated fadeIn">
       <router-view></router-view>
@@ -18,16 +18,6 @@
 <script>
 export default {
   name: "BaseLayout",
-  data() {
-    return {
-        centerText:{}
-    };
-  },
-  watch: {
-    $route(to, from) {
-        this.centerText = to.meta.centerText
-    }
-  }
 };
 </script>
 
