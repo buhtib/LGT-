@@ -2,12 +2,13 @@
 <template>
     <div class="base-layout">
         <page-header></page-header>
-        <transition
-            enter-active-class="animated fadeIn"
-        >
+        <transition enter-active-class="animated fadeIn">
             <router-view></router-view>
         </transition>
         <page-footer></page-footer>
+
+        <!-- 置顶组件 -->
+        <back-top :visibilityHeight="100" />
     </div>
 </template>
 

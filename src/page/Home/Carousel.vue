@@ -51,14 +51,14 @@
 </template>
 
 <script>
-import { log } from 'util';
 export default {
     name:'Carousel',
+    props:['interval'],
     mounted() {
         this.$nextTick(()=>{
             $('.carousel').carousel({
                 //轮播切换时间
-                interval: 2000
+                interval: this.interval
             })
         })
 
@@ -71,7 +71,7 @@ export default {
 
 <style lang="less" scoped>
 .carousel {
-    height: calc(100% - 170px);
+    height: 100%;
     .carousel-inner, .carousel-item {
         height: 100%;
     }

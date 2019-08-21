@@ -6,7 +6,7 @@
                 <div class="pic mr-5">
                     <img :src="$imgUrl" alt="hehe" class="img_cover" />
                 </div>
-                <ul class="contact  ml-5">
+                <ul class="contact ml-5">
                     <li>
                         <p>邮箱：1019114350@qq.com</p>
                     </li>
@@ -17,17 +17,17 @@
                         <p>地址：深圳市龙华区民治樟坑一区129栋</p>
                     </li>
                 </ul>
-            </div>  
+            </div>
 
-            <div class=" page-footer-right d-flex align-items-center justify-content-around">
+            <div class="page-footer-right d-flex align-items-center justify-content-around">
                 <div class="row justify-content-center w-100">
-                    <div class="col-4 d-flex flex-column align-items-center ">
+                    <div class="col-4 d-flex flex-column align-items-center">
                         <div class="pic">
                             <img :src="$imgUrl" alt="hehe" class="img_cover" />
                         </div>
-                        <span class="mt-1" >资深品牌顾问</span>
+                        <span class="mt-1">资深品牌顾问</span>
                     </div>
-                    <div class="col-4  d-flex flex-column align-items-center">
+                    <div class="col-4 d-flex flex-column align-items-center">
                         <div class="pic">
                             <img :src="$imgUrl" alt="hehe" class="img_cover" />
                         </div>
