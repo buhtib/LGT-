@@ -13,6 +13,7 @@ export default {
 <style lang="less">
 @import './style/base.less';
 @import './style/global.less';
+@import './style/bootstarp-ui.less';
 
 #app {
     height: 100%;

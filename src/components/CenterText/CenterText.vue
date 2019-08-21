@@ -28,7 +28,7 @@ export default {
     text-align: center;
   }
   .center {
-    width: 14vw;
+    width: 13rem;
     margin:10px auto;
     border-top: 1px solid #dddddd;
   }

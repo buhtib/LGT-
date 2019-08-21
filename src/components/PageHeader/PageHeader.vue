@@ -1,10 +1,10 @@
 <!-- 公共头部  -->
 <template>
   <div class="page-header">
-    <div class="container section">
+    <div class=" section">
       <div class="page-header-intro">
         <div class="page-header-intro_logo">
-          <img src="" alt="logo" class="img_cover" />
+          <img :src="$imgUrl" alt="logo" class="img_cover" />
         </div>
         <ul class="page-header-intro_area">
           <li>
@@ -52,7 +52,7 @@ export default {
 
 <style lang="less" scoped>
 .page-header {
-  //默认relative 但能有fixed效果
+  //默认会relative 但能有fixed效果
   position: sticky;
   top: 0;
   width: 100%;
@@ -62,7 +62,7 @@ export default {
     justify-content: space-between;
     height: 120px;
     .page-header-intro_logo {
-      width: 20%;
+      width: 30%;
       height: 100%;
     }
     .page-header-intro_area {
