@@ -2,6 +2,7 @@
 <template>
     <div class="base-layout">
         <page-header></page-header>
+        <!-- <center-text :header="centerText.header" :bottom="centerText.bottom"/> -->
         <transition enter-active-class="animated fadeIn">
             <router-view></router-view>
         </transition>
@@ -14,7 +15,21 @@
 
 <script>
 export default {
-    name: "BaseLayout"
+    name: "BaseLayout",
+    props: {
+        centerText: {
+            type: Object,
+            default: () => {}
+        }
+    },
+    data() {
+        return {
+
+        }
+    },
+    mounted(){
+      console.log(this.centerText)
+    }
 };
 </script>
 
