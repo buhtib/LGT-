@@ -1,15 +1,15 @@
 <template>
-  <div class="page-center-text">
-    <p class="header">Cases</p>
+  <div class="center-text">
+    <div class="header">{{header}}</div>
     <div class="center"></div>
-    <p class="bottom">Lgt的项目</p>
+    <div class="bottom">{{bottom}}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "",
-
+  name: "CenterText",
+  props:['header', 'bottom'],
   data() {
     return {};
   },
@@ -19,21 +19,22 @@ export default {
 </script>
 
 <style lang='less' scoped>
-.page-center-text {
+.center-text {
   padding-top: 50px;
-  p {
+  .header {
+    line-height: 1;
+    font-size: 38px;
     font-weight: bold;
     text-align: center;
   }
-  .header {
-    font-size: 38px;
-  }
   .center {
-    width: 15rem;
-    margin: 0 auto;
+    width: 14vw;
+    margin:10px auto;
     border-top: 1px solid #dddddd;
   }
   .bottom {
+    //继承属性
+    .header;
     font-size: 22px;
   }
 }

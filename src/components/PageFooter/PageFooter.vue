@@ -1,3 +1,4 @@
+<!-- 公共底部  -->
 <template>
   <div class="page-footer">
     <div class="section">

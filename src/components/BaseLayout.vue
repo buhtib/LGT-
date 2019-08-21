@@ -1,3 +1,4 @@
+<!-- 包含头部和尾部的 容器 -->
 <template>
     <div class="base-layout">
         <page-header></page-header>

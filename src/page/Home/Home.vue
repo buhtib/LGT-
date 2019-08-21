@@ -1,17 +1,18 @@
+<!-- 首页-->
 <template>
-  <div class="home-page">
+  <div class="home">
 
   </div>
 </template>
 
 <script>
 export default {
-
+    name:'Home'
 }
 </script>
 
 <style lang="less" scoped>
-.home-page {
+.home {
     
 }
 </style>

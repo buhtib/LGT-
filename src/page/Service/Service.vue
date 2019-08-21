@@ -1,3 +1,4 @@
+<!-- 服务范围-->
 <template>
   <div class="service">
   </div>
@@ -10,3 +11,9 @@ export default {
   
 }
 </script>
+
+<style lang="less" scoped>
+.service {
+    
+}
+</style>

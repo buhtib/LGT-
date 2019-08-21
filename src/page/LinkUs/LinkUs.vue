@@ -1,3 +1,4 @@
+<!-- 联系我们-->
 <template>
   <div class="link-us">
   </div>
@@ -10,3 +11,9 @@ export default {
   
 }
 </script>
+
+<style lang="less" scoped>
+.link-us {
+    
+}
+</style>

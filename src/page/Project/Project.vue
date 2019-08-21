@@ -1,3 +1,4 @@
+<!-- LGT项目-->
 <template>
   <div class="project">
   </div>
@@ -10,3 +11,9 @@ export default {
   
 }
 </script>
+
+<style lang="less" scoped>
+.project {
+    
+}
+</style>
