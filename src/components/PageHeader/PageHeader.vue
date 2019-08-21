@@ -21,7 +21,7 @@
 
       <div class="row align-items-center">
         <router-link
-          class="col-xl "
+          class="col-xl r-link"
           v-for="(tab, i) in navList"
           :key="i"
           :to="tab.path"

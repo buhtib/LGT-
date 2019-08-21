@@ -1,5 +1,6 @@
+<!--轮播组件-->
 <template>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -8,22 +9,22 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img
-                    class="d-block w-100"
-                    src="$imgUrl"
+                    class="d-block w-100 img_cover"
+                    :src="$imgUrl"
                     alt="First slide"
                 />
             </div>
             <div class="carousel-item">
                 <img
-                    class="d-block w-100"
-                    src="$imgUrl"
+                    class="d-block w-100 img_cover"
+                    :src="$imgUrl"
                     alt="Second slide"
                 />
             </div>
             <div class="carousel-item">
                 <img
-                    class="d-block w-100"
-                    src="$imgUrl"
+                    class="d-block w-100 img_cover"
+                    :src="$imgUrl"
                     alt="Third slide"
                 />
             </div>
@@ -50,8 +51,29 @@
 </template>
 
 <script>
-export default {};
+import { log } from 'util';
+export default {
+    name:'Carousel',
+    mounted() {
+        this.$nextTick(()=>{
+            $('.carousel').carousel({
+                //轮播切换时间
+                interval: 2000
+            })
+        })
+
+        $('#myCarousel').on('slide.bs.carousel', function ( ...rest ) {
+            console.log(rest)
+        })
+    }
+};
 </script>
 
 <style lang="less" scoped>
+.carousel {
+    height: calc(100% - 170px);
+    .carousel-inner, .carousel-item {
+        height: 100%;
+    }
+}
 </style>
