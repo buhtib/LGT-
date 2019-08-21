@@ -2,7 +2,7 @@
 <template>
     <div class="home">
         <div class="carousel">
-            <carousel interval="100"/>
+            <carousel :interval="100"/>
         </div>
 
         <div class="home-intro"></div>

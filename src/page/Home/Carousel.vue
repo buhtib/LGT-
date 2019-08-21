@@ -56,6 +56,7 @@ export default {
     props:['interval'],
     mounted() {
         this.$nextTick(()=>{
+            console.log(this.interval)
             $('.carousel').carousel({
                 //轮播切换时间
                 interval: this.interval
