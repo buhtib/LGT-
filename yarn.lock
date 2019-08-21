@@ -678,6 +678,25 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@better-scroll/core@^2.0.0-alpha.20":
+  version "2.0.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/@better-scroll/core/-/core-2.0.0-alpha.20.tgz#05c61276e201c26f7a79773ac2e70ffbae9b7f8f"
+  integrity sha512-AQVog7mJc3m5j75HCNZ4Lt6sd6wZtNjErDye6G6cZY0OlJTJRlP1tBWCLu6qspryQ5d9x+WqMqi+2S4R88C7+w==
+  dependencies:
+    "@better-scroll/shared-utils" "^2.0.0-alpha.20"
+
+"@better-scroll/shared-utils@^2.0.0-alpha.20":
+  version "2.0.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/@better-scroll/shared-utils/-/shared-utils-2.0.0-alpha.20.tgz#e5525bd242ec46ff07b3f62347c961c99425a902"
+  integrity sha512-ganQi3ds4HmIV2zo7Bf62xOOJMnMqS2FT7zHLtys91CqNfiEpJ82GfIV1IjMV8jaSruNBJQ6SK0I/DqW4q8WOw==
+
+"@better-scroll/slide@^2.0.0-alpha.20":
+  version "2.0.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/@better-scroll/slide/-/slide-2.0.0-alpha.20.tgz#86350662bab93546f860ae0e689fdee0a92feef0"
+  integrity sha512-muEYBR9ke6RwS1I6+p7H7HlKSFOJWIBcePkZ9HrUah4/HHY6nskR4t/xh83WqGNI1NImNbUJ7M6iMwUqq9tiiA==
+  dependencies:
+    "@better-scroll/core" "^2.0.0-alpha.20"
+
 "@hapi/address@2.x.x":
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.0.0.tgz#9f05469c88cb2fd3dcd624776b54ee95c312126a"

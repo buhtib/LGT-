@@ -2,7 +2,7 @@
 <template>
     <div class="home">
         <div class="carousel">
-            <carousel :interval="100"/>
+            <carousel />
         </div>
 
         <div class="home-intro"></div>
@@ -24,7 +24,7 @@ export default {
 .home {
     min-height: 100%;
     .carousel {
-        height: calc(100vh - 170px);
+        height: 500px;
     }
     .home-intro {
     }

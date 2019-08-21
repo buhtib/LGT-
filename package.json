@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
+    "@better-scroll/core": "^2.0.0-alpha.20",
+    "@better-scroll/slide": "^2.0.0-alpha.20",
     "core-js": "^2.6.5",
     "nprogress": "^0.2.0",
     "vue": "^2.6.10",

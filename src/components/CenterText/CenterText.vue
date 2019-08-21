@@ -1,8 +1,8 @@
 <template>
   <div class="center-text">
-    <div class="header">{{header}}</div>
+    <div class="header">{{centerText.header}}</div>
     <div class="center"></div>
-    <div class="bottom">{{bottom}}</div>
+    <div class="bottom">{{centerText.bottom}}</div>
   </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
   .bottom {
     //继承属性
     .header;
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 </style>
