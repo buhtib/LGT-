@@ -27,10 +27,11 @@
         class="mb-3 logo-row"
         v-for="(item, i) in 5"
         :key="i"
+        :gutter="16"
       >
+        <a-col :span="6" class="h-100 logo-col">皓月天誉LOGO设计</a-col>
         <a-col :span="6" class="h-100 logo-col ">皓月天誉LOGO设计</a-col>
-        <a-col :span="6" class="h-100 logo-col ">皓月天誉LOGO设计</a-col>
-        <a-col :span="6" class="h-100 logo-col ">皓月天誉LOGO设计</a-col>
+        <a-col :span="6" class="h-100 logo-col">皓月天誉LOGO设计</a-col>
         <a-col :span="6" class="h-100 logo-col">皓月天誉LOGO设计</a-col>
       </a-row>
     </div>
