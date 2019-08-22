@@ -1,39 +1,54 @@
 <!-- LGT项目-->
 <template>
   <div class="project">
-    <div class="banner-text">
-      <ul class="li-text">
-        <li>
-          <span class="all-case">全部案例</span>
-        </li>
-        <li>
-          <span>品牌VI设计</span>
-        </li>
-        <li>
-          <span>APP开发</span>
-        </li>
-        <li>
-          <span>海报设计</span>
-        </li>
-        <li>
-          <span>LOGO设计</span>
-        </li>
-        <li style="opacity:0">
-          <span>全部案例</span>
-        </li>
-        <li>
-          <span>画册设计</span>
-        </li>
-        <li>
-          <span>包装设计</span>
-        </li>
-        <li>
-          <span>网站开发</span>
-        </li>
-        <li>
-          <span>包装设计</span>
-        </li>
-      </ul>
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+      <div class="p-2 bd-highlight font-weight-bold text">全部案例</div>
+      <div class="p-2 bd-highlight text">品牌VI设计</div>
+      <div class="p-2 bd-highlight text">APP开发</div>
+      <div class="p-2 bd-highlight text">海报设计</div>
+      <div class="p-2 bd-highlight text">LOGO设计</div>
+    </div>
+    <div class="d-flex flex-row-reverse bd-highlight justify-content-center" style="padding-bottom:50px">
+      <div class="p-2 bd-highlight text">画册设计</div>
+      <div class="p-2 bd-highlight text">包装设计</div>
+      <div class="p-2 bd-highlight text">网站开发</div>
+      <div class="p-2 bd-highlight text">包装设计</div>
+      <div style="opacity:0;display:inline-block" class="p-2 bd-highlight text">包装设计</div>
+    </div>
+
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center justify-content-around">
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+    </div>
+
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center justify-content-around">
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+    </div>
+
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center justify-content-around">
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+    </div>
+
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center justify-content-around">
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+    </div>
+
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center justify-content-around">
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
+      <div class="p-2 bd-highlight logo">皓月天誉LOGO设计</div>
     </div>
   </div>
 </template>
@@ -46,30 +61,13 @@ export default {
 
 <style lang="less" scoped>
 .project {
-  .banner-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .li-text {
-      display: flex;
-      height: 200px;
-      line-height: 1;
-      font-size: 30px;
-      margin: 50px 0;
-      justify-content: center;
-      flex-wrap: wrap;
-      li {
-        padding: 0 50px;
-        font-weight: bold;
-        span{
-          text-align: center;
-        }
-        .all-case {
-          padding: 30px 20px;
-          background: rgb(201, 201, 201);
-        }
-      }
-    }
+  .text{
+    font-size: 28px;
+  }
+  .logo{
+    width: 300px;
+    height: 300px;
+    background: rgb(201, 201, 201);
   }
 }
 </style>
