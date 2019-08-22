@@ -1,27 +1,41 @@
 <!--轮播组件-->
+<!--文档参考-->
+
+<!-- https://better-scroll.github.io/docs/zh-CN/plugins/slide.html#%E4%BD%BF%E7%94%A8 -->
+<!-- https://better-scroll.github.io/docs/zh-CN/guide/base-scroll-options.html#startx -->
 <template>
   <div class="slide-banner">
     <div class="banner-wrapper">
       <div class="slide-banner-scroll" ref="slide">
         <div class="slide-banner-wrapper">
-          <div class="slide-item page1">page 1</div>
-          <div class="slide-item page2">page 2</div>
-          <div class="slide-item page3">page 3</div>
-          <div class="slide-item page4">page 4</div>
+          <div
+            class="slide-item "
+            v-for="(item, index) in pageList"
+            :key="index"
+          >
+            <img :src="$imgUrl" alt="slide" class="img_cover" />
+          </div>
         </div>
       </div>
       <div class="docs-wrapper">
         <span
           class="doc"
-          v-for="(item, index) in 4"
+          v-for="(item, index) in pageList"
           :key="index"
           :class="{ active: currentPageIndex === index }"
+          @click="goToPage(index)"
         ></span>
       </div>
     </div>
     <div class="btn-wrap">
-      <button class="next" @click="nextPage">nextPage</button>
-      <button class="prev" @click="prePage">prePage</button>
+      <div class="carousel-control-prev" @click="prePage">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="sr-only">Previous</span>
+      </div>
+      <div class="carousel-control-next" @click="nextPage">
+        <span class="carousel-control-next-icon"></span>
+        <span class="sr-only">Next</span>
+      </div>
     </div>
   </div>
 </template>
@@ -31,18 +45,29 @@
 import BScroll from "@better-scroll/core";
 //轮播
 import Slide from "@better-scroll/slide";
+BScroll.use(Slide);
 
 export default {
-  name: "Carousel",
+  //滚动间隔时间
+  props: ["time"],
   data() {
     return {
       slide: null,
+      //滚动到对应的 index
       currentPageIndex: 0,
-      playTimer: 0
+      //循环播放的 timer
+      playTimer: 0,
+      //数据
+      pageList: ["page 1", "page 2", "page 3"]
     };
   },
   mounted() {
     this.init();
+  },
+  beforeDestroy() {
+    clearTimeout(this.playTimer);
+    //销毁
+    this.slide.destroy();
   },
   methods: {
     init() {
@@ -52,21 +77,21 @@ export default {
         scrollY: false,
         slide: {
           loop: true,
-          threshold: 100
+          //滚动到下一个的阀值
+          threshold: 200
         },
         useTransition: true,
+        // 用来避免惯性动画带来的快速滚动时的闪烁问题
         momentum: false,
+        // 当你设置了 slide.loop 为 true 时，bounce 值需要设置为 false，否则会在循环衔接的时候出现闪烁。
         bounce: false,
         stopPropagation: true,
         probeType: 2
       });
-      this.slide.on("scrollEnd", this._onScrollEnd);
 
-      // user touches the slide area
       this.slide.on("beforeScrollStart", () => {
         clearTimeout(this.playTimer);
       });
-      // user touched the slide done
       this.slide.on("scrollEnd", () => {
         this.autoGoNext();
       });
@@ -81,53 +106,43 @@ export default {
     prePage() {
       this.slide.prev();
     },
-    _onScrollEnd() {
-      this.autoGoNext();
-    },
+    //设置自动轮播 及时间
     autoGoNext() {
       clearTimeout(this.playTimer);
       this.playTimer = setTimeout(() => {
         this.nextPage();
-      }, 4000);
+      }, this.time);
+    },
+    //跳转到指定页面
+    goToPage(index) {
+      clearTimeout(this.playTimer);
+      this.slide.goToPage(index);
+      this.autoGoNext();
     }
-  },
-  beforeDestroy() {
-    clearTimeout(this.playTimer);
-    this.slide.destroy();
   }
 };
 </script>
 
 <style lang="less" scoped>
 .slide-banner {
+  height: 100%;
   .banner-wrapper {
     position: relative;
+    height: 100%;
     .slide-banner-scroll {
-      min-height: 1px;
+      height: 100%;
       overflow: hidden;
       .slide-banner-wrapper {
-        height: 200px;
+        height: 100%;
         white-space: nowrap;
         font-size: 0;
         .slide-item {
           display: inline-block;
-          height: 200px;
+          height: 100%;
           width: 100%;
-          line-height: 200px;
+          line-height: 100%;
           text-align: center;
           font-size: 26px;
-          &.page1 {
-            background-color: #95b8d1;
-          }
-          &.page2 {
-            background-color: #dda789;
-          }
-          &.page3 {
-            background-color: #c3d899;
-          }
-          &.page4 {
-            background-color: #f2d4a7;
-          }
         }
       }
     }
@@ -138,28 +153,26 @@ export default {
       transform: translateX(-50%);
       .doc {
         display: inline-block;
-        margin: 0 4px;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #eee;
+        margin: 0 2px;
+        width: 80px;
+        height: 20px;
+        border: 1px solid black;
+        background: #fff;
+        cursor: pointer;
         &.active {
-          width: 20px;
-          border-radius: 5px;
+          background: #aaa;
         }
       }
     }
   }
+
   .btn-wrap {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
-    button {
-      margin: 0 10px;
-      padding: 10px;
-      color: #fff;
-      border-radius: 4px;
-      background-color: #666;
+    margin-top: 20px;
+    .carousel-control-prev,
+    .carousel-control-next {
+      cursor: pointer;
     }
   }
 }

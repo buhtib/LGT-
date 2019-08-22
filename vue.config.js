@@ -46,6 +46,8 @@ module.exports = {
     },
 
     chainWebpack: config => {
+        // 指定入口  es6转es5
+        config.entry.app = ['babel-polyfill', './src/main.js'];
         /**
          * 删除懒加载模块的prefetch，降低带宽压力
          * https://cli.vuejs.org/zh/guide/html-and-static-assets.html#prefetch
