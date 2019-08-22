@@ -2,7 +2,7 @@
 <template>
     <div class="home">
         <div class="carousel">
-            <carousel />
+            <carousel :time="3000" />
         </div>
 
         <div class="home-intro"></div>
@@ -22,9 +22,9 @@ export default {
 
 <style lang="less" scoped>
 .home {
-    min-height: 100%;
+    // min-height: 100%;
     .carousel {
-        height: 500px;
+        height: calc(100vh - 170px);
     }
     .home-intro {
     }
