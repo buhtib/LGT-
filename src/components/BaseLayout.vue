@@ -3,7 +3,7 @@
   <div class="base-layout">
     <page-header></page-header>
     <!-- 中间文字 -->
-    <center-text :centerText="$route.meta.centerText"  />
+    <center-text :centerText="$route.meta.centerText" />
 
     <transition enter-active-class="animated fadeIn">
       <router-view></router-view>

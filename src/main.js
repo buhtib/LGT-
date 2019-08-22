@@ -10,6 +10,11 @@ import router from './router'
  */
 import commonComponents from '@/components'
 Vue.use(commonComponents);
+/**
+ * 按需引入antd-vue
+ */
+import './ui/antd-vue-ui'
+
 
 Vue.config.productionTip = false
 
