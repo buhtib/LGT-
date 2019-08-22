@@ -10,8 +10,6 @@
     </transition>
     <page-footer></page-footer>
 
-    <!-- 置顶组件 -->
-    <back-top :visibilityHeight="100" />
   </div>
 </template>
 
