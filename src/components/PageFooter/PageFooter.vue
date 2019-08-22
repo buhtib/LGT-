@@ -6,34 +6,34 @@
                 <div class="pic mr-5">
                     <img :src="$imgUrl" alt="hehe" class="img_cover" />
                 </div>
-                <ul class="contact ml-5">
+                <ul class="contact m-0 ml-5 ">
                     <li>
-                        <p>邮箱：1019114350@qq.com</p>
+                        <span>邮箱：1019114350@qq.com</span>
                     </li>
                     <li>
-                        <p>电话：18219082540</p>
+                        <span>电话：18219082540</span>
                     </li>
                     <li>
-                        <p>地址：深圳市龙华区民治樟坑一区129栋</p>
+                        <span>地址：深圳市龙华区民治樟坑一区129栋</span>
                     </li>
                 </ul>
             </div>
 
             <div class="page-footer-right d-flex align-items-center justify-content-around">
-                <div class="row justify-content-center w-100">
-                    <div class="col-4 d-flex flex-column align-items-center">
+                <a-row class="w-100" type="flex"  justify="center" align="middle">
+                    <a-col :span="8" class=" d-flex flex-column justify-content-center align-items-center" >
                         <div class="pic">
                             <img :src="$imgUrl" alt="hehe" class="img_cover" />
                         </div>
                         <span class="mt-1">资深品牌顾问</span>
-                    </div>
-                    <div class="col-4 d-flex flex-column align-items-center">
+                    </a-col>
+                    <a-col :span="8" class=" d-flex flex-column justify-content-center align-items-center" >
                         <div class="pic">
                             <img :src="$imgUrl" alt="hehe" class="img_cover" />
                         </div>
                         <span class="mt-1">LGT公众号</span>
-                    </div>
-                </div>
+                    </a-col>
+                </a-row>
             </div>
         </div>
     </div>
@@ -47,7 +47,6 @@ export default {
 
 <style lang="less" scoped>
 .page-footer {
-    // box-sizing: content-box;
     height: 180px;
     margin-top: 50px;
     padding: 40px 0;
