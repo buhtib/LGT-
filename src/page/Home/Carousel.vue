@@ -8,7 +8,7 @@
         <div class="banner-wrapper">
             <div class="slide-banner-scroll" ref="slide">
                 <div class="slide-banner-wrapper">
-                    <div class="slide-item page1" v-for="(item, index) in pageList" :key="index">
+                    <div class="slide-item " v-for="(item, index) in pageList" :key="index">
                         <img :src="$imgUrl" alt="slide" class="img_cover" />
                     </div>
                 </div>
@@ -139,18 +139,6 @@ export default {
                     line-height: 100%;
                     text-align: center;
                     font-size: 26px;
-                    &.page1 {
-                        background-color: #95b8d1;
-                    }
-                    &.page2 {
-                        background-color: #dda789;
-                    }
-                    &.page3 {
-                        background-color: #c3d899;
-                    }
-                    &.page4 {
-                        background-color: #f2d4a7;
-                    }
                 }
             }
         }
