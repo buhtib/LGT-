@@ -122,6 +122,7 @@ export default {
   }
   .logo-col {
     background: rgb(201, 201, 201);
+    cursor: pointer;
   }
   .logoList{
     .lookMore{

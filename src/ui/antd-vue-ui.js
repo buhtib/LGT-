@@ -1,7 +1,30 @@
 import Vue from 'vue'
 
-import { Button, Message, Form, Input, Checkbox, Spin, Col, Row, Icon, Layout, Menu, Avatar, 
-  Dropdown, Modal, Notification, Tabs, Table, Tag, Divider, Breadcrumb, Select, InputNumber
+import {
+    Button,
+    Message,
+    Form,
+    Input,
+    Checkbox,
+    Spin,
+    Col,
+    Row,
+    Icon,
+    Layout,
+    Menu,
+    Avatar,
+    Dropdown,
+    Modal,
+    Notification,
+    Tabs,
+    Table,
+    Tag,
+    Divider,
+    Breadcrumb,
+    Select,
+    InputNumber,
+    Radio
+
 } from 'ant-design-vue';
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = Modal.confirm
@@ -27,6 +50,7 @@ Vue.use(Divider);
 Vue.use(Breadcrumb);
 Vue.use(Select);
 Vue.use(InputNumber);
+Vue.use(Radio);
 
 
 /**
@@ -34,6 +58,5 @@ Vue.use(InputNumber);
  */
 Message.config({
     duration: 1,
-  });
+});
 export default Message
-
