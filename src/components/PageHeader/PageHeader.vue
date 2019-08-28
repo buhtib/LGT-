@@ -6,7 +6,7 @@
             <div class="section">
                 <div class="page-header-intro d-flex justify-content-between">
                     <div class="page-header-intro_logo">
-                        <img :src="$imgUrl" alt="logo" class="img_cover" />
+                        <img v-lazy="$imgUrl" alt="logo" class="img_cover" />
                     </div>
                     <ul
                         class="page-header-intro_area d-flex flex-column align-items-center justify-content-center"

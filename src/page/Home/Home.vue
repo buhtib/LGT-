@@ -16,7 +16,7 @@
                         <div class="text_indent2 ">LGT设计工作室的成员都是程序界与设计界的精英，是一家有原创作经验丰富的团队，网站开发与平面设计为一体的设计工作室，工作室有专业的设计师、经验丰富的开发队员，年轻而具创造力的设计制作团队。经过多重工作实战磨练，其能力和默契配合可以胜任任何具有挑战性的工作。</div>
                     </a-col>
                     <a-col :span="8" >
-                        <img :src="$imgUrl" alt="" class="img_cover" style="height:300px"> 
+                        <img v-lazy="$imgUrl" alt="" class="img_cover" style="height:300px"> 
                     </a-col>
                 </a-row>
 
@@ -24,7 +24,7 @@
                     <a-col :span="12">
                         <a-row :gutter="10" v-for="(item, index) in 3" :key="index" :class="index == 1 ? 'my-2' : ''">
                             <a-col :span="8" v-for="(item, index) in 3" :key="index" >
-                                <img :src="$imgUrl" alt="" class="img_cover" style="height:90px">
+                                <img v-lazy="$imgUrl" alt="" class="img_cover" style="height:90px">
                             </a-col>
                         </a-row>
                     </a-col>

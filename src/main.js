@@ -5,8 +5,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueLazyload from 'vue-lazyload'
-//图片懒加载
-// 文档 https://github.com/hilongjw/vue-lazyload
+/**
+ * 图片懒加载  !! 有时图片不切换时要在 img上加上 :key="" !!
+ * 
+ * 文档 https://github.com/hilongjw/vue-lazyload
+ */
 Vue.use(VueLazyload, {
     //加载失败显示的图片
     error: require('./assets/img/error.png'),

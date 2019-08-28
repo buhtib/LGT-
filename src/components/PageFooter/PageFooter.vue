@@ -4,7 +4,7 @@
         <div class="section d-flex">
             <div class="page-footer-left d-flex align-items-center">
                 <div class="pic mr-5">
-                    <img :src="$imgUrl" alt="hehe" class="img_cover" />
+                    <img v-lazy="$imgUrl" alt="hehe" class="img_cover" />
                 </div>
                 <ul class="contact m-0 ml-5 ">
                     <li>
@@ -23,13 +23,13 @@
                 <a-row class="w-100" type="flex"  justify="center" align="middle">
                     <a-col :span="8" class=" d-flex flex-column justify-content-center align-items-center" >
                         <div class="pic">
-                            <img :src="$imgUrl" alt="hehe" class="img_cover" />
+                            <img v-lazy="$imgUrl" alt="hehe" class="img_cover" />
                         </div>
                         <span class="mt-1">资深品牌顾问</span>
                     </a-col>
                     <a-col :span="8" class=" d-flex flex-column justify-content-center align-items-center" >
                         <div class="pic">
-                            <img :src="$imgUrl" alt="hehe" class="img_cover" />
+                            <img v-lazy="$imgUrl" alt="hehe" class="img_cover" />
                         </div>
                         <span class="mt-1">LGT公众号</span>
                     </a-col>
