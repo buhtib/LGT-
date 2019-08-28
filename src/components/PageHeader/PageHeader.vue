@@ -1,7 +1,7 @@
 <!-- 公共头部  -->
 <template>
     <div class="page-header" ref="container">
-        <a-affix :offsetTop="0.00000001" :target="() => this.$refs.container" >
+        <a-affix :offsetTop="0.00000001">
 
             <div class="section">
                 <div class="page-header-intro d-flex justify-content-between">
