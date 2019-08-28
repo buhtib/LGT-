@@ -4,6 +4,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueLazyload from 'vue-lazyload'
+//图片懒加载
+// 文档 https://github.com/hilongjw/vue-lazyload
+Vue.use(VueLazyload, {
+    //加载失败显示的图片
+    error: require('./assets/img/error.png'),
+    loading: require('./assets/img/loading.gif')
+})
 
 
 /**

@@ -37,7 +37,9 @@
         </a-row>
 
         <a-row class="mb-3 logo-row" v-for="(item, i) in list3" :key="i" :gutter="16">
-          <a-col :span="6" class="h-100 logo-col">{{ item.text1 }}</a-col>
+          <a-col :span="6" class="h-100 logo-col">
+              <img v-lazy="'http://pic15.nipic.com/20110809/2801706_150850625000_2.jpg'">
+              {{ item.text1 }}</a-col>
           <a-col :span="6" class="h-100 logo-col">{{ item.text2 }}</a-col>
           <a-col :span="6" class="h-100 logo-col">{{ item.text3 }}</a-col>
           <a-button class="lookMore" @click="lookMore">查看更多</a-button>
