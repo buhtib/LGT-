@@ -23,7 +23,8 @@ import {
     Breadcrumb,
     Select,
     InputNumber,
-    Radio
+    Radio,
+    Affix
 
 } from 'ant-design-vue';
 Vue.prototype.$message = Message
@@ -51,6 +52,7 @@ Vue.use(Breadcrumb);
 Vue.use(Select);
 Vue.use(InputNumber);
 Vue.use(Radio);
+Vue.use(Affix);
 
 
 /**
