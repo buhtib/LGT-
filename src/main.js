@@ -10,7 +10,7 @@ import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload, {
     //加载失败显示的图片
     error: require('./assets/img/error.png'),
-    loading: require('./assets/img/loading.gif')
+    loading: 'https://img.zcool.cn/community/01114d59941891000000212989593d.gif',
 })
 
 
