@@ -210,6 +210,7 @@ export default {
             cursor: pointer;
             &.active {
                 background: rgb(201, 201, 201);
+                transition: background .5s;
                 font-weight: bold;
             }
         }
