@@ -75,6 +75,9 @@ let routes = [{
     {
         name: '404',
         path: '/404',
+        meta:{
+            title: '404'
+        },
         component: NotFound
     },
     {
