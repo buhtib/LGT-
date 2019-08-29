@@ -67,6 +67,7 @@ module.exports = {
             })
     },
     devServer: {
+        disableHostCheck: true,
         proxy: {
             "/api": {
                 "target": "http://120.79.160.28",
