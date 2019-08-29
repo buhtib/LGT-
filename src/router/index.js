@@ -16,12 +16,16 @@ let routes = [{
         children: [{
                 path: '/home',
                 name: 'home',
+                meta:{
+                    title: '首页'
+                },
                 component: () => import( /* webpackChunkName: "page" */ '@/page/Home/Home.vue')
             },
             {
                 path: '/brand',
                 name: 'brand',
                 meta: {
+                    title: 'LGT创意',
                     centerText: {
                         header: "Introduction",
                         bottom: "LGT核心团队"
@@ -33,6 +37,7 @@ let routes = [{
                 path: '/service',
                 name: 'service',
                 meta: {
+                    title: '服务范围',
                     centerText: {
                         header: "Services",
                         bottom: "服务范围"
@@ -44,6 +49,7 @@ let routes = [{
                 path: '/project',
                 name: 'project',
                 meta: {
+                    title: 'LGT项目',
                     centerText: {
                         header: "Cases",
                         bottom: "LGT的项目"
@@ -55,6 +61,7 @@ let routes = [{
                 path: '/linkus',
                 name: 'linkus',
                 meta: {
+                    title: '联系我们',
                     centerText: {
                         header: "Contact",
                         bottom: "联系我们咨询项目"
@@ -83,6 +90,11 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
     NProgress.start();
+    //对网页 title 进行改变
+    const title = to.meta && to.meta.title;
+    if (title) {
+      document.title = title;
+    }
     next();
 })
 
