@@ -24,7 +24,7 @@ import {
     Select,
     InputNumber,
     Radio,
-    Affix
+    Affix,
 
 } from 'ant-design-vue';
 Vue.prototype.$message = Message

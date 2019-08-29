@@ -53,7 +53,7 @@ let routes = [{
             },
             {
                 path: '/linkus',
-                name: 'linkUs',
+                name: 'linkus',
                 meta: {
                     centerText: {
                         header: "Contact",
