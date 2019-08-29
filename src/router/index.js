@@ -2,24 +2,26 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 Vue.use(Router)
-//进度条
+    //进度条
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 const NotFound = () =>
-    import( /* webpackChunkName: "page" */ '@/components/notFound.vue');
+    import ( /* webpackChunkName: "page" */ '@/components/notFound.vue');
 
 
 let routes = [{
         path: '/',
-        component: () => import( /* webpackChunkName: "page" */ '@/components/BaseLayout.vue'),
+        component: () =>
+            import ( /* webpackChunkName: "page" */ '@/components/BaseLayout.vue'),
         redirect: '/home',
         children: [{
                 path: '/home',
                 name: 'home',
-                meta:{
+                meta: {
                     title: '首页'
                 },
-                component: () => import( /* webpackChunkName: "page" */ '@/page/Home/Home.vue')
+                component: () =>
+                    import ( /* webpackChunkName: "page" */ '@/page/Home/Home.vue')
             },
             {
                 path: '/brand',
@@ -31,7 +33,8 @@ let routes = [{
                         bottom: "LGT核心团队"
                     }
                 },
-                component: () => import( /* webpackChunkName: "page" */ '@/page/Brand/Brand.vue')
+                component: () =>
+                    import ( /* webpackChunkName: "page" */ '@/page/Brand/Brand.vue')
             },
             {
                 path: '/service',
@@ -43,7 +46,8 @@ let routes = [{
                         bottom: "服务范围"
                     }
                 },
-                component: () => import( /* webpackChunkName: "page" */ '@/page/Service/Service.vue')
+                component: () =>
+                    import ( /* webpackChunkName: "page" */ '@/page/Service/Service.vue')
             },
             {
                 path: '/project',
@@ -55,7 +59,17 @@ let routes = [{
                         bottom: "LGT的项目"
                     }
                 },
-                component: () => import( /* webpackChunkName: "page" */ '@/page/Project/Project.vue')
+                component: () =>
+                    import ( /* webpackChunkName: "page" */ '@/page/Project/Project.vue'),
+
+            },
+            {
+
+                path: "/details",
+                name: "details",
+                component: () =>
+                    import ( /* webpackChunkName: "page" */ '@/page/Project/Details.vue')
+
             },
             {
                 path: '/linkus',
@@ -67,7 +81,8 @@ let routes = [{
                         bottom: "联系我们咨询项目"
                     }
                 },
-                component: () => import( /* webpackChunkName: "page" */ '@/page/LinkUs/LinkUs.vue')
+                component: () =>
+                    import ( /* webpackChunkName: "page" */ '@/page/LinkUs/LinkUs.vue')
             },
         ]
     },
@@ -75,7 +90,7 @@ let routes = [{
     {
         name: '404',
         path: '/404',
-        meta:{
+        meta: {
             title: '404'
         },
         component: NotFound
@@ -96,7 +111,7 @@ router.beforeEach((to, from, next) => {
     //对网页 title 进行改变
     const title = to.meta && to.meta.title;
     if (title) {
-      document.title = title;
+        document.title = title;
     }
     next();
 })

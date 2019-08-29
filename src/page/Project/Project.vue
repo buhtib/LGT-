@@ -26,69 +26,80 @@
             <div class="logoList">
                 <a-row
                     class="mb-3 logo-row"
-                    v-for="(item, i) in list1"
-                    :key="i"
+                    v-for="(item) in list1"
+                    :key="item.id"
                     :gutter="16"
                 >
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text1 }}</a-col>
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text2 }}</a-col>
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text3 }}</a-col>
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text4 }}</a-col>
                 </a-row>
 
                 <a-row
                     class="mb-3 logo-row"
-                    v-for="(item, i) in list2"
-                    :key="i"
+                    v-for="(item) in list2"
+                    :key="item.id"
                     :gutter="16"
                 >
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text1 }}</a-col>
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text2 }}</a-col>
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text3 }}</a-col>
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text4 }}</a-col>
                 </a-row>
 
                 <a-row
                     class="mb-3 logo-row"
-                    v-for="(item, i) in list3"
-                    :key="i"
+                    v-for="(item) in list3"
+                    :key="item.id"
                     :gutter="16"
                 >
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text1 }}</a-col>
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text2 }}</a-col>
                     <a-col
                         :span="6"
                         class="h-100 logo-col"
+                        @click="gotodetails"
                     >{{ item.text3 }}</a-col>
                     <a-button
                         class="lookMore"
@@ -123,25 +134,25 @@ export default {
             currentSelect: 0,
             list1: [
                 {
-                    text1: "数寄屋桥次郎店铺'画册' ",
-                    text2: "品存耳机网站开发' ",
-                    text3: "顾家家居LOGO+整套VI手册设计' ",
-                    text4: "裤兜网LOGO设计 "
+                    text1: "数寄屋桥次郎店铺'画册' ",id: "0",
+                    text2: "品存耳机网站开发' ",id:"1",
+                    text3: "顾家家居LOGO+整套VI手册设计' ",id:"2",
+                    text4: "裤兜网LOGO设计 ",id:"3"
                 }
             ],
             list2: [
                 {
-                    text1: "沐格 more grace海报设计 ",
-                    text2: "睿杏堂LOGO设计' ",
-                    text3: "水印长天LOGO设计' ",
-                    text4: "英醇礼LOGO以及茶包装设计 "
+                    text1: "沐格 more grace海报设计 ",id:"4",
+                    text2: "睿杏堂LOGO设计' ",id:"5",
+                    text3: "水印长天LOGO设计' ",id:"6",
+                    text4: "英醇礼LOGO以及茶包装设计 ",id:"7"
                 }
             ],
             list3: [
                 {
-                    text1: "飞行管家APP设计及开发",
-                    text2: "快乐柠檬网站开发 ",
-                    text3: "私潮APP开发设计"
+                    text1: "飞行管家APP设计及开发",id:"8",
+                    text2: "快乐柠檬网站开发 ",id:"9",
+                    text3: "私潮APP开发设计",id:"10"
                 }
             ]
         };
@@ -172,7 +183,10 @@ export default {
         changeSelectProjectAction(type) {
             this.currentSelect = type
         },
-        lookMore() {}
+        lookMore() {},
+        gotodetails() {
+            this.$router.push({name:"details"})
+        }
     }
 };
 </script>
