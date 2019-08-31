@@ -97,7 +97,6 @@ export default {
     },
     lookMore() {},
     gotodetails() {
-      this.$scrollTop(0)
       this.$router.push({ name: "details" });
     }
   }

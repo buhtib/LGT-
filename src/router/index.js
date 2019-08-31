@@ -118,6 +118,8 @@ router.beforeEach((to, from, next) => {
 
 
 router.afterEach((to, from) => {
+    //每次都置顶页面防止缓存 滚动距离
+    Vue.prototype.$scrollTop(0)
     // 做一些额外处理，比如进度条的效果
     NProgress.done();
 })
