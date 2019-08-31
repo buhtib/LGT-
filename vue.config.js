@@ -73,7 +73,7 @@ module.exports = {
                 "target": "http://120.79.160.28",
                 "changeOrigin": true,
                 ws: true,
-                port: 8080, // 端口
+                port: 20, // 端口
                 pathRewrite: {
                     '^/api': ''
                 }
@@ -84,4 +84,4 @@ module.exports = {
 }
 
 // .env.development
-// VUE_APP_BASE_API = '/api'
+VUE_APP_BASE_API = '/api'

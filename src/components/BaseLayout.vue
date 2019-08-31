@@ -6,16 +6,20 @@
     <center-text :centerText="$route.meta.centerText" />
 
     <transition enter-active-class="animated fadeIn">
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </transition>
     <page-footer></page-footer>
 
+    <!-- 置顶组件 -->
+    <a-back-top :visibilityHeight="400"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: "BaseLayout",
+  name: "BaseLayout"
 };
 </script>
 

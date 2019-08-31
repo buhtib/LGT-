@@ -25,5 +25,13 @@ export default {
         publicFn(Vue)
         //假的占位图地址  后面接上尺寸
         Vue.prototype.$imgUrl = 'http://placehold.it/1000x1000'
+        /**
+         * 变化滚动距离
+         * 
+         * @param {number} top 距离顶部的距离
+         */
+        Vue.prototype.$scrollTop = (top)=>{
+          document.documentElement.scrollTop = top
+        }
     },
 }
