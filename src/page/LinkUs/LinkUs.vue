@@ -1,7 +1,7 @@
 <!-- 联系我们-->
 <template>
   <div class="link-us">
-    <div class="select">
+    <div class="select section">
       <p class="title">欢迎来到LGT工作室！请选择您需要服务项目。</p>
       <div class="radio-group">
         <a-radio-group :options="plainOptions" @change="onChange1"  class="radio"/>
@@ -92,8 +92,8 @@ export default {
     font-size: 22px;
   }
   .select {
-    width: 1200px;
-    margin: 0 auto;
+    // width: 1200px;
+    // margin: 0 auto;
     .radio-group{
       display: flex;
       justify-content: center;
