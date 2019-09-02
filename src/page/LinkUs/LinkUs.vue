@@ -92,8 +92,6 @@ export default {
     font-size: 22px;
   }
   .select {
-    // width: 1200px;
-    // margin: 0 auto;
     .radio-group{
       display: flex;
       justify-content: center;
