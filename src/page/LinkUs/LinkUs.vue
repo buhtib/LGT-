@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="form">
-      <p class="title">欢迎来到LGT品牌！请选择悄需要胡服务项目。</p>
+      <p class="title">欢迎来到LGT品牌！请输入您的信息。</p>
       <div>
         <a-form :form="form">
           <a-form-item>
