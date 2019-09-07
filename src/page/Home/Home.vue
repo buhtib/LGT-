@@ -10,7 +10,7 @@
     <div class="section">
       <div class="home-intro">
         <a-row :gutter="30" class="row font16" type="flex">
-          <a-col :span="14">
+          <a-col :span="11">
             <h1 class="left_title color348">关于我们</h1>
             <h1 class="left_title_noboder color666">About us</h1>
             <div class="text_indent2 ">
@@ -26,7 +26,7 @@
               LGT设计工作室的成员都是程序界与设计界的精英，是一家有原创作经验丰富的团队，网站开发与平面设计为一体的设计工作室，工作室有专业的设计师、经验丰富的开发队员，年轻而具创造力的设计制作团队。经过多重工作实战磨练，其能力和默契配合可以胜任任何具有挑战性的工作。
             </div>
           </a-col>
-          <a-col :span="10" class="d-flex align-items-end justify-content-end">
+          <a-col :span="13" class="d-flex align-items-end justify-content-end">
             <img
               v-lazy="require('../../assets/img/gzs.png')"
               alt=""
@@ -36,7 +36,7 @@
         </a-row>
 
         <a-row class="row font16 grid">
-          <a-col :span="11">
+          <a-col :span="12">
             <a-row
               v-for="(item, row_index) in 3"
               :key="row_index"
@@ -53,7 +53,7 @@
               </a-col>
             </a-row>
           </a-col>
-          <a-col :span="10" offset="3">
+          <a-col :span="10" offset="2">
             <h1 class="right_title color348">我们，因你而在</h1>
             <h1 class="right_title_noboder color666">Because of you</h1>
             <div class="text_indent2 ">
