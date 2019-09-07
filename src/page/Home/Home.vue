@@ -2,8 +2,14 @@
 <template>
   <div class="home">
     <a-carousel autoplay style="overflow:hidden">
-      <div class="carousel" v-for="(it, i) in 3" :key="i">
-        <img src="~@/assets/img/banner.jpg" alt="slide" class="img_cover" />
+      <div class="carousel" >
+        <img src="~@/assets/img/banner1.jpg" alt="slide" class="img_cover" />
+      </div>
+       <div class="carousel" >
+        <img src="~@/assets/img/banner2.jpg" alt="slide" class="img_cover" />
+      </div>
+       <div class="carousel" >
+        <img src="~@/assets/img/banner3.jpg" alt="slide" class="img_cover" />
       </div>
     </a-carousel>
 
