@@ -5739,6 +5739,15 @@ pkg-up@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
+portfinder@1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
+  integrity sha1-uzLs2HwnEErm7kS1o8y/Drsa7ek=
+  dependencies:
+    async "^1.5.2"
+    debug "^2.2.0"
+    mkdirp "0.5.x"
+
 portfinder@^1.0.20, portfinder@^1.0.21:
   version "1.0.22"
   resolved "https://registry.npm.taobao.org/portfinder/download/portfinder-1.0.22.tgz#abd10a488b5696e98ee25c60731f8ae0b76f8ddd"
