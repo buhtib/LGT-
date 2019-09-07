@@ -1,18 +1,6 @@
 <!-- 首页-->
 <template>
   <div class="home">
-    <a-carousel autoplay style="overflow:hidden">
-      <div class="carousel" >
-        <img src="~@/assets/img/banner1.jpg" alt="slide" class="img_cover" />
-      </div>
-       <div class="carousel" >
-        <img src="~@/assets/img/banner2.jpg" alt="slide" class="img_cover" />
-      </div>
-       <div class="carousel" >
-        <img src="~@/assets/img/banner3.jpg" alt="slide" class="img_cover" />
-      </div>
-    </a-carousel>
-
     <div class="section">
       <div class="home-intro">
         <a-row :gutter="30" class="row font16" type="flex">
@@ -97,9 +85,7 @@ export default {
 <style lang="less" scoped>
 .home {
   // min-height: 100%;
-  .carousel {
-    height: calc(100vh - 150px);
-  }
+  
   .home-intro {
     .text_indent2 {
       text-indent: 2em;

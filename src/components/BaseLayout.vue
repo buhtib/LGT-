@@ -2,6 +2,19 @@
 <template>
   <div class="base-layout">
     <page-header></page-header>
+
+     <a-carousel autoplay style="overflow:hidden">
+      <div class="carousel" >
+        <img src="~@/assets/img/banner1.jpg" alt="slide" class="img_cover" />
+      </div>
+       <div class="carousel" >
+        <img src="~@/assets/img/banner2.jpg" alt="slide" class="img_cover" />
+      </div>
+       <div class="carousel" >
+        <img src="~@/assets/img/banner3.jpg" alt="slide" class="img_cover" />
+      </div>
+    </a-carousel>
+
     <!-- 中间文字 -->
     <center-text :centerText="$route.meta.centerText" />
 
@@ -28,4 +41,7 @@ export default {
   width: 100%;
   height: 100%;
 }
+.carousel {
+    height: calc(100vh - 150px);
+  }
 </style>
