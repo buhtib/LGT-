@@ -136,7 +136,7 @@ export default {
         .icon {
           width: 50px;
           .separation-line {
-            margin: 0 10px;
+            margin: 0 16px;
           }
         }
       }

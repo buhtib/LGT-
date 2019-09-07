@@ -1,9 +1,11 @@
 <!-- 首页-->
 <template>
   <div class="home">
-    <div class="carousel">
-      <carousel :time="3000" />
-    </div>
+    <a-carousel autoplay style="overflow:hidden">
+      <div class="carousel" v-for="(it, i) in 3" :key="i">
+        <img src="~@/assets/img/banner.jpg" alt="slide" class="img_cover" />
+      </div>
+    </a-carousel>
 
     <div class="section">
       <div class="home-intro">
@@ -75,13 +77,8 @@
 </template>
 
 <script>
-import Carousel from "./Carousel";
-
 export default {
-  name: "Home",
-  components: {
-    Carousel
-  }
+  name: "Home"
 };
 </script>
 
@@ -89,7 +86,7 @@ export default {
 .home {
   // min-height: 100%;
   .carousel {
-    height: calc(100vh - 170px);
+    height: calc(100vh - 150px);
   }
   .home-intro {
     .text_indent2 {
