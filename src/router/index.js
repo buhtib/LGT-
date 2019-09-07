@@ -29,8 +29,8 @@ let routes = [{
                 meta: {
                     title: 'LGT创意',
                     centerText: {
-                        header: "Introduction",
-                        bottom: "LGT核心团队"
+                        header: "LGT核心团队",
+                        bottom: "品牌创始人"
                     }
                 },
                 component: () =>
@@ -42,7 +42,7 @@ let routes = [{
                 meta: {
                     title: '服务范围',
                     centerText: {
-                        header: "Services",
+                        header: "SERVICE SCOPE",
                         bottom: "服务范围"
                     }
                 },
@@ -55,8 +55,8 @@ let routes = [{
                 meta: {
                     title: 'LGT项目',
                     centerText: {
-                        header: "Cases",
-                        bottom: "LGT的项目"
+                        header: "LGT PROJECT",
+                        bottom: "LGT项目"
                     }
                 },
                 component: () =>
@@ -77,8 +77,8 @@ let routes = [{
                 meta: {
                     title: '联系我们',
                     centerText: {
-                        header: "Contact",
-                        bottom: "联系我们咨询项目"
+                        header: "CONTACT US",
+                        bottom: "联系我们"
                     }
                 },
                 component: () =>

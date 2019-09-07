@@ -39,13 +39,13 @@
           class="look-more_btn font20 font-weight-bold mr-5"
           size="large"
           @click="$router.push('service')"
-          >了解LGT品牌的服务内容</a-button
+          >了解LGT品牌服务内容</a-button
         >
         <a-button
           class="look-more_btn font20 font-weight-bold"
           size="large"
           @click="$router.push('project')"
-          >了解LGT品牌的服务案例</a-button
+          >了解LGT品牌服务案例</a-button
         >
       </div>
     </div>
