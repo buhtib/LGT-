@@ -38,17 +38,18 @@
         <a-row class="row font16 grid">
           <a-col :span="11">
             <a-row
-              :gutter="10"
-              v-for="(item, index) in 3"
-              :key="index"
-              :class="index == 1 ? 'my-1' : ''"
+              v-for="(item, row_index) in 3"
+              :key="row_index"
+              :class="row_index == 1 ? 'my-1' : ''"
             >
-              <a-col :span="8" v-for="(item, index) in 3" :key="index">
-                <img
-                  v-lazy="require('../../assets/img/example.png')"
-                  alt=""
-                  class="img_cover grid-item"
-                />
+              <a-col
+                :span="7"
+                v-for="(item, col_index) in 3"
+                :key="col_index"
+                class="grid-item "
+                :class="col_index == 0|| col_index == 1  ? 'mr-1' : ''"
+              > 
+                <img v-lazy="grid(row_index, col_index)" alt="" />
               </a-col>
             </a-row>
           </a-col>
@@ -78,7 +79,12 @@
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  methods: {
+    grid(row, col) {
+      return require("../../assets/img/home-anli-" + row + col + ".png");
+    }
+  }
 };
 </script>
 
@@ -132,7 +138,10 @@ export default {
     .grid {
       &-item {
         height: 96px;
-        border-radius: 4px;
+        line-height: 96px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #bfbfbf;
       }
     }
   }
