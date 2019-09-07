@@ -25,7 +25,7 @@ export default {
 
 <style lang='less' scoped>
 .center-text {
-  padding-top: 50px;
+  padding-top: 40px;
   .header {
     line-height: 1;
     font-size: 32px;
