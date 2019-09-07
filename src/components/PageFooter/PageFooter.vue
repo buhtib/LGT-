@@ -22,22 +22,28 @@
 
         <ul class="contact ">
           <li class="d-flex mb-2">
-            <div class="icon">
-              <img src="~@/assets/img/email-white.png" alt="" srcset="" />
+            <div class="icon d-flex">
+              <div class="icon_img">
+                <img src="~@/assets/img/email-white.png" alt="" srcset="" />
+              </div>
               <span class="separation-line">|</span>
             </div>
             <span>1019114350@qq.com</span>
           </li>
           <li class="d-flex mb-2">
-            <div class="icon">
-              <img src="~@/assets/img/tel-white.png" alt="" srcset="" />
+            <div class="icon d-flex">
+              <div class="icon_img">
+                <img src="~@/assets/img/tel-white.png" alt="" srcset="" />
+              </div>
               <span class="separation-line">|</span>
             </div>
             <span>18219082540</span>
           </li>
           <li class="d-flex">
-            <div class="icon">
-              <img src="~@/assets/img/address-white.png" alt="" srcset="" />
+            <div class="icon d-flex">
+              <div class="icon_img">
+                <img src="~@/assets/img/address-white.png" alt="" srcset="" />
+              </div>
               <span class="separation-line">|</span>
             </div>
             <span>深圳市龙华区民治樟坑一区129栋</span>
@@ -52,7 +58,8 @@
         >
           <a-col
             :span="12"
-            class=" d-flex flex-column justify-content-center align-items-center pr-5"
+            class=" d-flex flex-column justify-content-center align-items-center "
+            style="padding-right:85px;"
           >
             <div class="">
               <img
@@ -132,9 +139,12 @@ export default {
 
       .contact {
         margin: 0;
+        padding-right: 30px;
         white-space: nowrap;
         .icon {
-          width: 50px;
+          .icon_img {
+            width: 20px;
+          }
           .separation-line {
             margin: 0 16px;
           }
