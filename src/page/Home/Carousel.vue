@@ -13,7 +13,7 @@
             v-for="(item, index) in pageList"
             :key="index"
           >
-            <img :src="$imgUrl" alt="slide" class="img_cover" />
+            <img src="~@/assets/img/banner.jpg" alt="slide" class="img_cover" />
           </div>
         </div>
       </div>
