@@ -28,7 +28,8 @@ export default {
   padding-top: 50px;
   .header {
     line-height: 1;
-    font-size: 38px;
+    font-size: 32px;
+    color: #348ccd;
     font-weight: bold;
     text-align: center;
   }
@@ -40,7 +41,9 @@ export default {
   .bottom {
     //继承属性
     .header;
-    font-size: 18px;
+    font-size: 24px;
+    color: #666;
+    font-weight: normal;
   }
 }
 </style>
