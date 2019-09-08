@@ -2,38 +2,55 @@
 <template>
   <div class="link-us">
     <div class="select section">
-      <p class="title">欢迎来到LGT工作室！请选择您需要服务项目。</p>
-      <div class="radio-group">
-        <a-radio-group :options="plainOptions" @change="onChange1"  class="radio"/>
-        <br />
-        <a-radio-group :options="options" @change="onChange2" class="radio"/>
-        <br />
-        <a-radio-group :options="optionsWithDisabled" @change="onChange3" class="radio"/>
+      <p class="title">欢迎来到LGT工作室！请选择您需要服务项目</p>
+      <div class="radio-group section">
+        <a-radio-group :options="plainOptions" @change="onChange1" class="radio" />
+        <a-radio-group :options="options" @change="onChange2" class="radio" />
+        <a-radio-group :options="optionsWithDisabled" @change="onChange3" class="radio" />
       </div>
     </div>
-    <div class="form">
-      <p class="title">欢迎来到LGT品牌！请输入您的信息。</p>
-      <div>
-        <a-form :form="form">
-          <a-form-item>
-            <a-input placeholder="您的姓名！" v-model="form.name" />
-          </a-form-item>
-          <a-form-item>
-            <a-input placeholder="您的公司！" v-model="form.company" />
-          </a-form-item>
-          <a-form-item>
-            <a-input placeholder="您的电话！" v-model="form.tel" />
-          </a-form-item>
-          <a-form-item>
-            <a-input placeholder="您的邮箱！" v-model="form.email" />
-          </a-form-item>
-          <a-form-item>
-            <a-textarea placeholder="您还可以补充说明您的要求？LGT客服会尽快为您服务！" :rows="4" v-model="form.textarea" />
-          </a-form-item>
-          <a-form-item>
-            <a-button type="primary" html-type="submit" @click="submission">确定</a-button>
-          </a-form-item>
-        </a-form>
+    <div class="bottom-box section">
+      <div class="left-box">
+        <div class="text-box">
+          <div class="text-box text">
+            <div class="text-box sign"></div>一群狂热的年轻人，用自己的视野重新塑造产品、爱生活，爱艺术，希望通过一己之力改变周围的世界.
+          </div>
+        </div>
+      </div>
+      <div class="right-box">
+        <span class="title">欢迎来到LGT品牌！</span>
+        <div class="form-box">
+          <div>
+            <a-form :form="form" class="form">
+              <a-form-item class="form-item">
+                <span>您的姓名:</span>
+                <a-input v-model="form.name" class="form-input"  />
+              </a-form-item>
+              <a-form-item class="form-item">
+                <span>公司地址:</span>
+                <a-input v-model="form.company" class="form-input" />
+              </a-form-item>
+              <a-form-item class="form-item">
+                <span>电子邮箱:</span>
+                <a-input v-model="form.tel" class="form-input" />
+              </a-form-item>
+              <a-form-item class="form-item">
+                <span>公司名称:</span>
+                <a-input v-model="form.email" class="form-input" />
+              </a-form-item>
+              <a-form-item class="form-item">
+                <span class="leaving-msg">留言内容:</span>
+                <a-textarea
+                  placeholder="请输入留言内容"
+                  v-model="form.textarea"
+                  class="form-input"
+                  style="width:340px;height:168px"
+                />
+              </a-form-item>
+              <a-button type="primary" html-type="submit" @click="submission" class="sub-btn">确定</a-button>
+            </a-form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -88,23 +105,101 @@ export default {
 
 <style lang="less" scoped>
 .link-us {
+  padding-top: 30px;
   .title {
     font-size: 22px;
   }
   .select {
-    .radio-group{
+    .title {
+      margin-bottom: 40px;
+      font-size: 15px;
+      color: #333333;
+      text-align: center;
+    }
+    .radio-group {
       display: flex;
       justify-content: center;
-      .radio{
-        font-size: 50px;
-        font-weight: bold;
-        margin: 20px 150px;
+      .radio {
+        font-size: 20px;
+        color: #333333;
+        margin: 0 208px;
+        .ant-radio-wrapper {
+          margin: 30px 0;
+        }
       }
     }
   }
-  .form {
-    width: 90%;
-    margin: 0 auto;
+  .bottom-box {
+    display: flex;
+    padding-top: 40px;
+    .left-box {
+      width: 310px;
+      .text-box {
+        .sign {
+          display: inline-block;
+          width: 13px;
+          height: 26px;
+          margin-right: 25px;
+          background-color: #348ccd;
+        }
+        .text {
+          display: inline-block;
+          font-size: 28px;
+          color: #333333;
+        }
+      }
+    }
+    .right-box {
+      position: relative;
+      width: 558px;
+      height: 572px;
+      margin-left: 276px;
+      border-style: solid;
+      border-top-width: 12px;
+      border-right-width: 6px;
+      border-bottom-width: 12px;
+      border-left-width: 6px;
+      border-radius: 10px;
+      color: #348ccd;
+      .title{
+        position: absolute;
+        top: 42px;
+        left: 43px;
+        font-size: 14px;
+        color: #333333;
+      }
+      .form-box {
+        width: 454px;
+        margin-top: 100px;
+        margin-left: 58px;
+        .form {
+          .form-item {
+            margin-bottom: 16px;
+            line-height: 30px;
+            .ant-form-item-control-wrapper{
+              line-height: 30px;
+            }
+            span {
+              margin-right: 10px;
+            }
+            .leaving-msg{
+              position: relative;
+              bottom: 150px;
+            }
+            .form-input {
+              width: 340px;
+              height: 30px;
+            }
+          }
+          .sub-btn {
+            width: 110px;
+            height: 38px;
+            margin: 4px 68px;
+            background-color: #348ccd;
+          }
+        }
+      }
+    }
   }
 }
 </style>

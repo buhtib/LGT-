@@ -2,22 +2,10 @@
 <template>
   <div class="base-layout">
     <page-header></page-header>
-
-     <a-carousel autoplay style="overflow:hidden">
-      <div class="carousel" >
-        <img src="~@/assets/img/banner1.jpg" alt="slide" class="img_cover" />
-      </div>
-       <div class="carousel" >
-        <img src="~@/assets/img/banner2.jpg" alt="slide" class="img_cover" />
-      </div>
-       <div class="carousel" >
-        <img src="~@/assets/img/banner3.jpg" alt="slide" class="img_cover" />
-      </div>
-    </a-carousel>
-
+    <!-- banner -->
+    <Banner></Banner>
     <!-- 中间文字 -->
     <center-text :centerText="$route.meta.centerText" />
-
     <transition enter-active-class="animated fadeIn">
       <keep-alive>
         <router-view></router-view>
@@ -26,7 +14,7 @@
     <page-footer></page-footer>
 
     <!-- 置顶组件 -->
-    <a-back-top :visibilityHeight="400"/>
+    <a-back-top :visibilityHeight="400" />
   </div>
 </template>
 
@@ -42,6 +30,6 @@ export default {
   height: 100%;
 }
 .carousel {
-    height: calc(100vh - 150px);
-  }
+  height: calc(100vh - 150px);
+}
 </style>

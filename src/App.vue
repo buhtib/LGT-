@@ -15,6 +15,8 @@ export default {
 @import "./style/base.less";
 @import "./style/global.less";
 @import "./style/bootstarp-ui.less";
+@import "./style/antdesign.less";
+
 
 #app {
   height: 100%;

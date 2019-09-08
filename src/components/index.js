@@ -1,4 +1,3 @@
-
 import publicFn from '@/public'
 
 /**
@@ -7,12 +6,13 @@ import publicFn from '@/public'
 import PageHeader from '@/components/PageHeader/PageHeader'
 import PageFooter from '@/components/PageFooter/PageFooter'
 import CenterText from '@/components/CenterText/CenterText'
+import Banner from '@/components/Banner/Banner'
 
 //使用阿里图标库 的IconFont组件
 import { Icon } from 'ant-design-vue';
 import { scriptUrl } from '@/utils/utils';
 const IconFont = Icon.createFromIconfontCN({
-  scriptUrl
+    scriptUrl
 })
 
 
@@ -21,17 +21,18 @@ export default {
         Vue.component('PageHeader', PageHeader)
         Vue.component('PageFooter', PageFooter)
         Vue.component('CenterText', CenterText)
+        Vue.component('Banner', Banner)
 
         publicFn(Vue)
-        //假的占位图地址  后面接上尺寸
+            //假的占位图地址  后面接上尺寸
         Vue.prototype.$imgUrl = 'http://placehold.it/1000x1000'
-        /**
-         * 变化滚动距离
-         * 
-         * @param {number} top 距离顶部的距离
-         */
-        Vue.prototype.$scrollTop = (top)=>{
-          document.documentElement.scrollTop = top
+            /**
+             * 变化滚动距离
+             * 
+             * @param {number} top 距离顶部的距离
+             */
+        Vue.prototype.$scrollTop = (top) => {
+            document.documentElement.scrollTop = top
         }
     },
 }
