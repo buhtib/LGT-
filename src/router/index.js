@@ -31,7 +31,8 @@ let routes = [{
                     centerText: {
                         header: "LGT核心团队",
                         bottom: "品牌创始人"
-                    }
+                    },
+                    banner:1
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/Brand/Brand.vue')
@@ -44,7 +45,8 @@ let routes = [{
                     centerText: {
                         header: "SERVICE SCOPE",
                         bottom: "服务范围"
-                    }
+                    },
+                    banner:2
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/Service/Service.vue')
@@ -57,7 +59,8 @@ let routes = [{
                     centerText: {
                         header: "LGT PROJECT",
                         bottom: "LGT项目"
-                    }
+                    },
+                    banner:3
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/Project/Project.vue'),
@@ -79,7 +82,8 @@ let routes = [{
                     centerText: {
                         header: "CONTACT US",
                         bottom: "联系我们"
-                    }
+                    },
+                    banner:1
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/LinkUs/LinkUs.vue')
