@@ -49,7 +49,7 @@
                     class="look-more_btn font20 font-weight-bold mr-5"
                     size="large"
                     @click="$router.push('project')"
-                >了解LGT品牌的项目</a-button>
+                >了解LGT品牌服务项目</a-button>
                 <a-button
                     class="look-more_btn font20 font-weight-bold"
                     size="large"
@@ -66,7 +66,7 @@ export default {
     data() {
         return {
             centerText: {
-                header: "Creative Design",
+                header: "CREATIVE DESIGN",
                 bottom: "创意设计"
             },
             project: [
