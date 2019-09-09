@@ -79,9 +79,9 @@
                 class="item-input-last"
                 v-decorator="[
                   'leavingMsg',
-                  {rules: [{ required: true, message: '请输入您的公司名称！' }]}
+                  {rules: [{ required: true, message: '请输入您的留言内容！' }]}
                 ]"
-                placeholder="Please input your nickname"
+                placeholder="Please input your Leaving a message"
               ></a-textarea>
             </a-form-item>
             <a-form-item
