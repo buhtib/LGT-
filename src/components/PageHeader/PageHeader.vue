@@ -118,5 +118,11 @@ export default {
       }
     }
   }
+
+  .r-link {
+    &.router-link-exact-active {
+      color: #010101 !important;
+    }
+  }
 }
 </style>
