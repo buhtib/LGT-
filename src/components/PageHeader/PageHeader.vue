@@ -36,7 +36,7 @@
             class="col-xl r-link"
             v-for="(tab, i) in navList"
             :key="i"
-            :to="{path:tab.path,query: {name: tab.name}}"
+            :to="{path:tab.path}"
             exact
             >{{ tab.name }}</router-link
           >
