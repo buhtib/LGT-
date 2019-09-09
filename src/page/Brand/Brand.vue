@@ -36,7 +36,7 @@
         class="look-more_btns d-flex justify-content-center align-items-center"
       >
         <a-button
-          class="look-more_btn font20 font-weight-bold mr-5"
+          class="look-more_btn font20 font-weight-bold"
           size="large"
           @click="$router.push('service')"
           >了解LGT品牌服务内容</a-button
@@ -134,8 +134,12 @@ export default {
   }
   .look-more_btns {
     .look-more_btn {
-      width: 24%;
+      box-sizing: border-box;
+      width: 286px;
       height: 50px;
+      &:first-of-type {
+        margin-right: 42px;
+      }
     }
   }
 }

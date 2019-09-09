@@ -36,13 +36,13 @@ export default {
   .center {
     width: 13rem;
     margin: 10px auto;
-    border-top: 1px solid #dddddd;
+    border-top: 2px solid #cccccc;
   }
   .bottom {
     //继承属性
     .header;
     font-size: 24px;
-    color: #666;
+    color: #333;
     font-weight: normal;
   }
 }
