@@ -20,36 +20,77 @@
       <div class="right-box">
         <span class="title">欢迎来到LGT品牌！</span>
         <div class="form-box">
-          <div>
-            <a-form :form="form" class="form">
-              <a-form-item class="form-item">
-                <span>您的姓名:</span>
-                <a-input v-model="form.name" class="form-input"  />
-              </a-form-item>
-              <a-form-item class="form-item">
-                <span>公司地址:</span>
-                <a-input v-model="form.company" class="form-input" />
-              </a-form-item>
-              <a-form-item class="form-item">
-                <span>电子邮箱:</span>
-                <a-input v-model="form.tel" class="form-input" />
-              </a-form-item>
-              <a-form-item class="form-item">
-                <span>公司名称:</span>
-                <a-input v-model="form.email" class="form-input" />
-              </a-form-item>
-              <a-form-item class="form-item">
-                <span class="leaving-msg">留言内容:</span>
-                <a-textarea
-                  placeholder="请输入留言内容"
-                  v-model="form.textarea"
-                  class="form-input"
-                  style="width:340px;height:168px"
-                />
-              </a-form-item>
-              <a-button type="primary" html-type="submit" @click="submission" class="sub-btn">确定</a-button>
-            </a-form>
-          </div>
+          <a-form :form="form" class="form">
+            <a-form-item
+              :label-col="formItemLayout.labelCol"
+              :wrapper-col="formItemLayout.wrapperCol"
+              label="您的姓名"
+            >
+              <a-input
+                class="item-input"
+                v-decorator="[
+                'username',
+                  {rules: [{ required: true, message: '请输入您的姓名！' }]}
+                ]"
+                placeholder="Please input your name"
+              />
+            </a-form-item>
+            <a-form-item
+              :label-col="formItemLayout.labelCol"
+              :wrapper-col="formItemLayout.wrapperCol"
+              label="电话号码"
+            >
+              <a-input
+                class="item-input"
+                v-decorator="[
+                'tel',
+                  {rules: [{ required: true, message: '请输入您的电话号码！' }]}
+                ]"
+                placeholder="Please input your telephone number"
+              />
+            </a-form-item>
+            <a-form-item
+              :label-col="formItemLayout.labelCol"
+              :wrapper-col="formItemLayout.wrapperCol"
+              label="电子邮箱"
+            >
+              <a-input
+                class="item-input"
+                v-decorator="[
+                'email',
+                  {rules: [{ required: true, message: '请输入您的邮箱！' }]}
+                ]"
+                placeholder="Please input your email"
+              />
+            </a-form-item>
+            <a-form-item
+              label="公司名称"
+              :label-col="formItemLayout.labelCol"
+              :wrapper-col="formItemLayout.wrapperCol"
+            >
+              <a-input placeholder="Please input your corporate name" class="item-input" />
+            </a-form-item>
+            <a-form-item
+              :label-col="formItemLayout.labelCol"
+              :wrapper-col="formItemLayout.wrapperCol"
+              label="留言内容"
+            >
+              <a-textarea
+                class="item-input-last"
+                v-decorator="[
+                  'leavingMsg',
+                  {rules: [{ required: true, message: '请输入您的公司名称！' }]}
+                ]"
+                placeholder="Please input your nickname"
+              ></a-textarea>
+            </a-form-item>
+            <a-form-item
+              :label-col="formTailLayout.labelCol"
+              :wrapper-col="formTailLayout.wrapperCol"
+            >
+              <a-button type="primary" @click="check">提交</a-button>
+            </a-form-item>
+          </a-form>
         </div>
       </div>
     </div>
@@ -72,6 +113,14 @@ const optionsWithDisabled = [
   { label: "易拉宝设计", value: "易拉宝设计" },
   { label: "网站开发", value: "网站开发" }
 ];
+const formItemLayout = {
+  labelCol: { span: 4 },
+  wrapperCol: { span: 8 }
+};
+const formTailLayout = {
+  labelCol: { span: 4 },
+  wrapperCol: { span: 8, offset: 4 }
+};
 export default {
   name: "LinkUs",
   data() {
@@ -85,7 +134,11 @@ export default {
         tel: "",
         email: "",
         textarea: ""
-      }
+      },
+      checkNick: false,
+      formItemLayout,
+      formTailLayout,
+      form: this.$form.createForm(this)
     };
   },
   methods: {
@@ -98,7 +151,20 @@ export default {
     onChange3(e) {
       console.log("radio3 checked", e.target.value);
     },
-    submission() {}
+    submission() {},
+    check() {
+      this.form.validateFields(err => {
+        if (!err) {
+          console.info("success");
+        }
+      });
+    },
+    handleChange(e) {
+      this.checkNick = e.target.checked;
+      this.$nextTick(() => {
+        this.form.validateFields(["nickname"], { force: true });
+      });
+    }
   }
 };
 </script>
@@ -161,7 +227,7 @@ export default {
       border-left-width: 6px;
       border-radius: 10px;
       color: #348ccd;
-      .title{
+      .title {
         position: absolute;
         top: 42px;
         left: 43px;
@@ -172,32 +238,6 @@ export default {
         width: 454px;
         margin-top: 100px;
         margin-left: 58px;
-        .form {
-          .form-item {
-            margin-bottom: 16px;
-            line-height: 30px;
-            .ant-form-item-control-wrapper{
-              line-height: 30px;
-            }
-            span {
-              margin-right: 10px;
-            }
-            .leaving-msg{
-              position: relative;
-              bottom: 150px;
-            }
-            .form-input {
-              width: 340px;
-              height: 30px;
-            }
-          }
-          .sub-btn {
-            width: 110px;
-            height: 38px;
-            margin: 4px 68px;
-            background-color: #348ccd;
-          }
-        }
       }
     }
   }
