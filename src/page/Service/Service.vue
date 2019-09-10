@@ -27,7 +27,7 @@
         </ul>
 
         <div class="banner">
-          <img v-lazy="$imgUrl" alt="" class="img_cover" />
+          <img v-lazy="require('../../assets/img/service-banner.jpg')" alt="" class="img_cover" />
         </div>
       </div>
 
