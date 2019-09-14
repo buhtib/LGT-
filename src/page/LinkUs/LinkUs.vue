@@ -44,9 +44,28 @@
             >
               <a-input
                 class="item-input"
+                maxlength="11"
                 v-decorator="[
                 'tel',
-                  {rules: [{ required: true, message: '请输入您的电话号码！' }]}
+                  {rules: [
+                  {
+                    min:11,
+                    message: '请输入正确的电话号码！'
+                  },
+                  {
+                  pattern: /^1[3456789]\d{9}$/,
+                  message: '手机格式不正确！',
+                  },
+                  { required: true,
+                  whitespace: true,
+                   type:'number',
+                   transform(value) {
+                      if(value){
+                        return Number(value);
+                      }
+                    },
+                   message: '请输入正确的电话号码！' },
+                   ]}
                 ]"
                 placeholder="Please input your telephone number"
               />
@@ -60,7 +79,17 @@
                 class="item-input"
                 v-decorator="[
                 'email',
-                  {rules: [{ required: true, message: '请输入您的邮箱！' }]}
+                  {rules: [
+                  { required: true, message: '请输入您的邮箱！' },
+                  {
+                  pattern: /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/,
+                  message: '邮箱格式不正确',
+                  },
+                  {
+                  max: 50,
+                  message: '邮箱不得超过50字符',
+                  },
+                  ]}
                 ]"
                 placeholder="Please input your email"
               />
