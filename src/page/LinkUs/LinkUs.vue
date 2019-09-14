@@ -2,11 +2,13 @@
 <template>
   <div class="link-us">
     <div class="select section">
-      <p class="title">欢迎来到LGT工作室！请选择您需要服务项目</p>
+      <p class="title">欢迎来到LGT工作室！请选择您需要的服务项目</p>
       <div class="radio-group section">
-        <a-radio-group :options="plainOptions" @change="onChange1" class="radio" />
-        <a-radio-group :options="options" @change="onChange2" class="radio" />
-        <a-radio-group :options="optionsWithDisabled" @change="onChange3" class="radio" />
+        <a-checkbox-group :options="plainOptions" @change="onChange1" class="checkbox" />
+
+        <a-checkbox-group :options="options" @change="onChange2" class="checkbox" />
+
+        <a-checkbox-group :options="optionsWithDisabled" @change="onChange3" class="checkbox" />
       </div>
     </div>
     <div class="bottom-box section">
@@ -128,13 +130,6 @@ export default {
       plainOptions,
       options,
       optionsWithDisabled,
-      form: {
-        name: "",
-        company: "",
-        tel: "",
-        email: "",
-        textarea: ""
-      },
       checkNick: false,
       formItemLayout,
       formTailLayout,
@@ -142,16 +137,19 @@ export default {
     };
   },
   methods: {
-    onChange1(e) {
-      console.log("radio1 checked", e.target.value);
+    // 多选框
+    onChange1(checkedValues) {
+      console.log("checked = ", checkedValues);
+      console.log("value = ", this.value);
     },
-    onChange2(e) {
-      console.log("radio2 checked", e.target.value);
+    onChange2(checkedValues) {
+      console.log("checked = ", checkedValues);
+      console.log("value = ", this.value);
     },
-    onChange3(e) {
-      console.log("radio3 checked", e.target.value);
+    onChange3(checkedValues) {
+      console.log("checked = ", checkedValues);
+      console.log("value = ", this.value);
     },
-    submission() {},
     check() {
       this.form.validateFields(err => {
         if (!err) {
@@ -185,13 +183,10 @@ export default {
     .radio-group {
       display: flex;
       justify-content: center;
-      .radio {
+      .checkbox {
         font-size: 20px;
         color: #333333;
-        margin: 0 208px;
-        .ant-radio-wrapper {
-          margin: 30px 0;
-        }
+        margin: 0 108px;
       }
     }
   }

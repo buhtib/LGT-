@@ -1,7 +1,7 @@
 <!-- LGT项目的详情页-->
 <template>
   <div class="project-details section">
-    <a-button class="back-btn" @click="back">返回</a-button>
+ 
   </div>
 </template>
 
@@ -14,9 +14,7 @@ export default {
   },
 
   methods: {
-    back() {
-      this.$router.go(-1);
-    }
+   
   }
 };
 </script>
