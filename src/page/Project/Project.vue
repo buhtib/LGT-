@@ -20,7 +20,7 @@
       <div class="logoList">
         <ul class="clearfix font18">
           <li v-for="(item, index) in projectList[currentSelect]" :key="index">
-            <a-button type="primary" class="look-details" @click="gotodetails">查看详情</a-button>
+            <a-button type="primary" class="look-details" @click="gotodetails(item)">查看详情</a-button>
             <img
               v-lazy="require('../../assets/img/project-li-cover.png')"
               alt
@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import { log } from 'util';
 export default {
   name: "Project",
   data() {
@@ -93,8 +94,8 @@ export default {
       this.currentSelect = type;
     },
     lookMore() {},
-    gotodetails() {
-      this.$router.push({ name: "details",query: { id: 1 } });
+    gotodetails(item) {
+      this.$router.push({ name: "details",query: { name: item.name } });
     }
   }
 };
@@ -139,7 +140,7 @@ export default {
         img {
           &:hover {
             opacity: 0.3;
-            transition: 2s;
+            transition: 0.8s;
           }
         }
         .look-details {
@@ -155,7 +156,7 @@ export default {
         }
         &:hover .look-details {
           opacity: 1;
-          transition: 2s;
+          transition: 0.8s;
         }
         span {
           display: inline-block;

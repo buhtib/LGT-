@@ -32,7 +32,7 @@ let routes = [{
                         header: "LGT核心团队",
                         bottom: "品牌创始人"
                     },
-                    banner:1
+                    banner: 1
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/Brand/Brand.vue')
@@ -46,7 +46,7 @@ let routes = [{
                         header: "SERVICE SCOPE",
                         bottom: "服务范围"
                     },
-                    banner:2
+                    banner: 2
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/Service/Service.vue')
@@ -60,7 +60,7 @@ let routes = [{
                         header: "LGT PROJECT",
                         bottom: "LGT项目"
                     },
-                    banner:3
+                    banner: 3
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/Project/Project.vue'),
@@ -83,7 +83,7 @@ let routes = [{
                         header: "CONTACT US",
                         bottom: "联系我们"
                     },
-                    banner:1
+                    banner: 1
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/LinkUs/LinkUs.vue')
@@ -124,7 +124,7 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to, from) => {
     //每次都置顶页面防止缓存 滚动距离
     Vue.prototype.$scrollTop(0)
-    // 做一些额外处理，比如进度条的效果
+        // 做一些额外处理，比如进度条的效果
     NProgress.done();
 })
 

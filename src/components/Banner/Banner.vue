@@ -11,7 +11,7 @@
             <img src="~@/assets/img/banner3.jpg" alt="slide" class="img_cover" />
         </div>
     </a-carousel>
-
+  
     <img
       :src="require('../../assets/img/banner'+$route.meta.banner+'.jpg')"
       alt="图片加载失败"
