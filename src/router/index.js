@@ -18,7 +18,8 @@ let routes = [{
                 path: '/home',
                 name: 'home',
                 meta: {
-                    title: '首页'
+                    title: '首页',
+                    banner: 0
                 },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/Home/Home.vue')
@@ -70,6 +71,10 @@ let routes = [{
 
                 path: "/details",
                 name: "details",
+                meta: {
+                    title: '详情',
+                    banner: 'null'
+                },
                 component: () =>
                     import ( /* webpackChunkName: "page" */ '@/page/Project/Details.vue')
 
