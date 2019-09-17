@@ -11,7 +11,7 @@
           type="flex"
           justify="space-between"
         >
-          <a-col :span="8" v-for="(col, index) in row" :key="index" class="col border">
+          <a-col :span="8" v-for="(col, index) in row" :key="index" class="col ">
             <div class="col_img">
               <img v-lazy="col.img" alt style="height:200px;" />
             </div>
