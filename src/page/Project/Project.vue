@@ -58,7 +58,7 @@ export default {
           { name: "网站开发", type: "web" }
         ]
       ],
-      projectList: {},
+      projectList: [],
       currentSelect: "all",
       pageForm: {
         start: 0, // 当前页码
@@ -91,9 +91,9 @@ export default {
           }
 
           // 追加数据
-          // if (res.status === 200) {
-          //   this.projectList = this.projectList.concat(res.data);
-          // }
+          if (res.status === 200) {
+            this.projectList = this.projectList.concat(res.data);
+          }
 
           this.sortAllProject();
         })
