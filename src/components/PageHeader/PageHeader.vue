@@ -3,9 +3,7 @@
   <div class="page-header" ref="container">
     <a-affix :offsetTop="0.00000001">
       <div class="page-header-intro d-flex justify-content-between section">
-        <div
-          class="page-header-intro_logo d-flex justify-content-center align-items-center"
-        >
+        <div class="page-header-intro_logo d-flex justify-content-center align-items-center">
           <img src="~@/assets/img/logo.png" alt="logo" />
         </div>
         <ul
@@ -18,19 +16,19 @@
           </li>
           <li class="d-flex">
             <div>
-              <img src="~@/assets/img/email-blue.png" alt="" />&nbsp;&nbsp;
+              <img src="~@/assets/img/email-blue.png" alt />&nbsp;&nbsp;
               <span>1019114350@qq.com &nbsp;&nbsp; &nbsp; &nbsp;</span>
             </div>
             <div>
-              <img src="~@/assets/img/wx-blue.png" alt="" />&nbsp;&nbsp;
-              <img src="~@/assets/img/tel-blue.png" alt="" />&nbsp;&nbsp;
+              <img src="~@/assets/img/wx-blue.png" alt />&nbsp;&nbsp;
+              <img src="~@/assets/img/tel-blue.png" alt />&nbsp;&nbsp;
               <span>电话/微信：18219082540</span>
             </div>
           </li>
         </ul>
       </div>
 
-      <div class="nav d-flex justify-content-center">
+      <div class="nav d-flex justify-content-center" v-if="$route.meta.title !== '详情' ">
         <div class="row align-items-center section">
           <router-link
             class="col-xl r-link"
@@ -38,8 +36,19 @@
             :key="i"
             :to="{path:tab.path}"
             exact
-            >{{ tab.name }}</router-link
-          >
+          >{{ tab.name }}</router-link>
+        </div>
+      </div>
+
+      <div class="nav d-flex justify-content-center" v-else-if="$route.meta.title === '详情' ">
+        <div class="row align-items-center section">
+          <router-link
+            class="detailsCol"
+            v-for="(tab, i) in detailsNavList"
+            :key="i"
+            :to="{path:tab.path}"
+            exact
+          >{{ tab.name }}</router-link>
         </div>
       </div>
     </a-affix>
@@ -57,6 +66,10 @@ export default {
         { name: "服务范围", path: "/service" },
         { name: "LGT项目", path: "/project" },
         { name: "联系我们", path: "/linkus" }
+      ],
+      detailsNavList: [
+        { name: "客户案例", path: "/project" },
+        { name: "返回首页", path: "/home" }
       ]
     };
   }
@@ -123,6 +136,11 @@ export default {
     &.router-link-exact-active {
       color: #010101 !important;
     }
+  }
+  .detailsCol {
+    margin-right: 40px;
+    font-size: 14px;
+    color: #fff;
   }
 }
 </style>
