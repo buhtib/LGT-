@@ -1,6 +1,6 @@
 <template>
-  <div class="carousel">
-    <a-carousel autoplay  v-if="!$route.meta.banner" >
+  <div class="carousel" v-if="$route.meta.banner !== 'null'">
+    <a-carousel autoplay  v-if="$route.meta.banner == 0" >
         <div class="carousel">
             <img src="~@/assets/img/banner1.jpg" alt="slide" class="img_cover" />
         </div>

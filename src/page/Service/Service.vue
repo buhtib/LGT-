@@ -127,7 +127,8 @@ export default {
 
   .service-design {
     .banner {
-      height: 500px;
+      margin-top:44px;
+      // height: 500px;
     }
   }
 

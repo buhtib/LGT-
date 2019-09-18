@@ -116,7 +116,7 @@ export default {
         line-height: 20px;
         padding-right: 20px;
         margin-bottom: 40px;
-        border: 0;
+        border: 0 !important;
       }
       .look-more_btn {
         float: right;
