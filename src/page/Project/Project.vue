@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { log } from 'util';
+import { caselist } from "../../api/project";
 export default {
   name: "Project",
   data() {
@@ -59,7 +59,12 @@ export default {
         ]
       ],
       projectList: {},
-      currentSelect: "all"
+      currentSelect: "all",
+      pageForm: {
+        start: 0, // 当前页码
+        end: 9, // 每页条数
+        totalPage: 0 // 总页数
+      }
     };
   },
   mounted() {
@@ -67,11 +72,29 @@ export default {
   },
   methods: {
     getAllProject() {
-      _axios
-        .get("caselist")
+      const start = this.pageForm.start;
+      const end = this.pageForm.end;
+      const type = this.currentSelect;
+      caselist(start, end, type)
         .then(res => {
-          this.projectList = res;
           console.log(res);
+          this.projectList = res.data;
+
+          // 一共多少页
+          this.pageForm.totalPage = Math.ceil(
+            res.data.length / this.pageForm.end
+          );
+
+          // 判断是否还有更多页
+          if (this.pageForm.start >= this.pageForm.totalPage) {
+            this.$message.warning("没有更多数据了！");
+          }
+
+          // 追加数据
+          // if (res.status === 200) {
+          //   this.projectList = this.projectList.concat(res.data);
+          // }
+
           this.sortAllProject();
         })
         .catch(err => {});
@@ -92,10 +115,16 @@ export default {
 
     changeSelectProjectAction(type) {
       this.currentSelect = type;
+      this.getAllProject();
     },
-    lookMore() {},
+    lookMore() {
+      if (this.pageForm.start < this.pageForm.totalPage) {
+        this.pageForm.start++;
+        this.getAllProject();
+      }
+    },
     gotodetails(item) {
-      this.$router.push({ name: "details",query: { name: item.name } });
+      this.$router.push({ name: "details", query: { name: item.name } });
     }
   }
 };
@@ -145,7 +174,7 @@ export default {
         }
         .look-details {
           position: absolute;
-          z-index: 99;
+          z-index: 1;
           top: 0;
           right: 0;
           bottom: 0;
