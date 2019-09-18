@@ -58,7 +58,7 @@ export default {
           { name: "网站开发", type: "web" }
         ]
       ],
-      projectList: [],
+      projectList: {},
       currentSelect: "all",
       pageForm: {
         start: 0, // 当前页码
@@ -77,24 +77,15 @@ export default {
       const type = this.currentSelect;
       caselist(start, end, type)
         .then(res => {
-          console.log(res);
           this.projectList = res.data;
-
           // 一共多少页
           this.pageForm.totalPage = Math.ceil(
             res.data.length / this.pageForm.end
           );
-
           // 判断是否还有更多页
           if (this.pageForm.start >= this.pageForm.totalPage) {
             this.$message.warning("没有更多数据了！");
           }
-
-          // 追加数据
-          if (res.status === 200) {
-            this.projectList = this.projectList.concat(res.data);
-          }
-
           this.sortAllProject();
         })
         .catch(err => {});
@@ -120,7 +111,16 @@ export default {
     lookMore() {
       if (this.pageForm.start < this.pageForm.totalPage) {
         this.pageForm.start++;
-        this.getAllProject();
+        // this.getAllProject();
+        const start = this.pageForm.start;
+        const end = this.pageForm.end;
+        const type = this.currentSelect;
+        caselist(start, end, type).then(res => {
+          // 追加数据
+          if (res.status === 200) {
+            this.projectList[this.currentSelect] = this.projectList[this.currentSelect].concat(res.data);
+          }
+        });
       }
     },
     gotodetails(item) {
