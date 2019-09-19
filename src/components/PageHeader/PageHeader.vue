@@ -28,23 +28,11 @@
         </ul>
       </div>
 
-      <div class="nav d-flex justify-content-center" v-if="$route.meta.title !== '详情' ">
+      <div class="nav d-flex justify-content-center" >
         <div class="row align-items-center section">
           <router-link
-            class="col-xl r-link"
-            v-for="(tab, i) in navList"
-            :key="i"
-            :to="{path:tab.path}"
-            exact
-          >{{ tab.name }}</router-link>
-        </div>
-      </div>
-
-      <div class="nav d-flex justify-content-center" v-else-if="$route.meta.title === '详情' ">
-        <div class="row align-items-center section">
-          <router-link
-            class="detailsCol"
-            v-for="(tab, i) in detailsNavList"
+            :class="_navStyle"
+            v-for="(tab, i) in _navList"
             :key="i"
             :to="{path:tab.path}"
             exact
@@ -72,6 +60,14 @@ export default {
         { name: "返回首页", path: "/home" }
       ]
     };
+  },
+  computed: {
+    _navList() {
+      return this.$route.meta.title === '详情' ? this.detailsNavList : this.navList
+    },
+    _navStyle() {
+      return this.$route.meta.title === '详情' ? "detailsCol" : "col-xl r-link"
+    }
   }
 };
 </script>
