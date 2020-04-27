@@ -2,29 +2,23 @@
 <template>
   <div class="page-footer bg2c colorccc font12">
     <div class="section d-flex">
-      <div
-        class="page-footer-section d-flex align-items-center  justify-content-between"
-      >
-        <div class="pic ">
+      <div class="page-footer-section d-flex align-items-center justify-content-between">
+        <div class="pic">
           <img v-lazy="require('../../assets/img/logo.png')" alt="hehe" />
         </div>
 
         <ul class="service clearfix">
-          <div class="mr-2 mb-2 ">服务范围</div>
-          <li
-            v-for="(item, index) in serviceList"
-            :key="index"
-            class="mb-1 mr-1"
-          >
+          <div class="mr-2 mb-2">服务范围</div>
+          <li v-for="(item, index) in serviceList" :key="index" class="mb-1 mr-1">
             <span>{{ item }}</span>
           </li>
         </ul>
 
-        <ul class="contact ">
+        <ul class="contact">
           <li class="d-flex mb-2">
             <div class="icon d-flex">
               <div class="icon_img">
-                <img src="~@/assets/img/email-white.png" alt="" srcset="" />
+                <img src="~@/assets/img/email-white.png" alt srcset />
               </div>
               <span class="separation-line">|</span>
             </div>
@@ -33,16 +27,16 @@
           <li class="d-flex mb-2">
             <div class="icon d-flex">
               <div class="icon_img">
-                <img src="~@/assets/img/tel-white.png" alt="" srcset="" />
+                <img src="~@/assets/img/tel-white.png" alt srcset />
               </div>
               <span class="separation-line">|</span>
             </div>
-            <span>18219082540</span>
+            <span>19195682297</span>
           </li>
           <li class="d-flex">
             <div class="icon d-flex">
               <div class="icon_img">
-                <img src="~@/assets/img/address-white.png" alt="" srcset="" />
+                <img src="~@/assets/img/address-white.png" alt srcset />
               </div>
               <span class="separation-line">|</span>
             </div>
@@ -50,34 +44,20 @@
           </li>
         </ul>
 
-        <a-row
-          class="qr-code h-100"
-          type="flex"
-          justify="center"
-          align="middle"
-        >
+        <a-row class="qr-code h-100" type="flex" justify="center" align="middle">
           <a-col
             :span="12"
-            class=" d-flex flex-column justify-content-center align-items-center "
+            class="d-flex flex-column justify-content-center align-items-center"
             style="padding-right:85px;"
           >
-            <div class="">
-              <img
-                v-lazy="require('../../assets/img/gw-qrcode.png')"
-                alt="hehe"
-              />
+            <div class>
+              <img class="gw-qrcode" v-lazy="require('../../assets/img/gw-qrcode.jpg')" alt="hehe" />
             </div>
             <span class="mt-1">资深品牌顾问</span>
           </a-col>
-          <a-col
-            :span="12"
-            class=" d-flex flex-column justify-content-center align-items-center"
-          >
-            <div class="">
-              <img
-                v-lazy="require('../../assets/img/wx-qrcode.png')"
-                alt="hehe"
-              />
+          <a-col :span="12" class="d-flex flex-column justify-content-center align-items-center">
+            <div class>
+              <img v-lazy="require('../../assets/img/wx-qrcode.png')" alt="hehe" />
             </div>
             <span class="mt-1">LGT公众号</span>
           </a-col>
@@ -153,6 +133,14 @@ export default {
 
       .qr-code {
         white-space: nowrap;
+        .gw-qrcode {
+          width: 84px;
+          height: 82px;
+          overflow: hidden;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
       }
     }
   }

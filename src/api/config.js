@@ -9,23 +9,23 @@ import Axios from 'axios'
 
 //配置项
 let axios = Axios.create({
-    baseURL: process.env.NODE_ENV == 'development' ? '/api/' : '/',
+    baseURL: process.env.NODE_ENV == 'development' ? '/' : '/',
     withCredentials: true
 });
 
 // 添加请求拦截器
-axios.interceptors.request.use( (config) =>{
+axios.interceptors.request.use((config) => {
     // 在发送请求之前做些什么
     return config;
-}, (error) =>{
+}, (error) => {
     // 对请求错误做些什么
     return Promise.reject(error);
 });
 // 添加响应拦截器
-axios.interceptors.response.use( (response) =>{
+axios.interceptors.response.use((response) => {
     // 对响应数据做点什么
     return response;
-}, (error) =>{
+}, (error) => {
     if (error && error.response) {
         switch (error.response.status) {
             case 400:
@@ -65,11 +65,11 @@ axios.interceptors.response.use( (response) =>{
                 error.message = 'http版本不支持该请求'
                 break;
             default:
-            error.message = `连接错误${error.response.status}`
+                error.message = `连接错误${error.response.status}`
         }
-      } else {
+    } else {
         error.message = "连接到服务器失败"
-      }
+    }
     // 对响应错误做点什么
     return Promise.reject(error.message);
     // return Promise.reject(error);

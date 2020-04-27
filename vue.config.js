@@ -54,9 +54,9 @@ module.exports = {
          * 而且预渲染时生成的prefetch标签是modern版本的，低版本浏览器是不需要的
          */
         config.plugins.delete('prefetch')
-        /**
-         * 它的作用是阻止标签元素间生成空白内容
-         */
+            /**
+             * 它的作用是阻止标签元素间生成空白内容
+             */
         config.module
             .rule('vue')
             .use('vue-loader')
@@ -67,19 +67,19 @@ module.exports = {
             })
 
         config.plugin('ignore')
-            .use(new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/));//忽略/moment/locale下的所有文件
-            
+            .use(new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)); //忽略/moment/locale下的所有文件
+
     },
     devServer: {
         disableHostCheck: true,
         proxy: {
-            "/api": {
-                "target": "http://120.79.160.28",
+            "/": {
+                "target": "http://192.168.31.50:8000",
                 "changeOrigin": true,
                 ws: true,
-                port: 22, // 端口
+                port: 8081, // 端口
                 pathRewrite: {
-                    '^/api': ''
+                    '^/': ''
                 }
             },
         }
@@ -88,4 +88,4 @@ module.exports = {
 }
 
 // .env.development
-VUE_APP_BASE_API = '/api'
+// VUE_APP_BASE_API = '/api'

@@ -1,18 +1,19 @@
 // import axios from './config'
 import axios from 'axios'
+
 /**
  * 引入 antd-vue的提示方法
  */
 import Message from '@/ui/antd-vue-ui'
 // 引入qs模块，用来序列化post类型的数据
-import QS from 'qs';
+// import QS from 'qs';
 
 
 // 创建axios实例
 let service = axios.create({
         timeout: 5000, // 请求超时时间
         // application/x-www-form-urlencoded
-        headers: { 'content-type': 'application/json; charset=utf-8' }
+        // headers: { 'content-type': 'application/json; charset=utf-8' }
     })
     // request拦截器
 service.interceptors.request.use(config => {
@@ -29,25 +30,28 @@ service.interceptors.request.use(config => {
 // respone拦截器
 service.interceptors.response.use(
     response => {
-        const res = response
-        if (res.status !== 200) {
-            Message({
-                message: res.msg,
-                type: 'error',
-                duration: 5 * 1000
+        const res = response.data;
+        if (res.code !== 0) {
+            Message.config({
+                // duration: 2,
+                maxCount: 3,
+                duration: 2
             })
-
-            return Promise.reject('error')
+            Message.error(res.msg);
+            return response.data;
         } else {
-            return response
+            return response.data;
         }
     },
     error => {
-        Message({
-            message: error.message,
-            type: 'error',
-            duration: 5 * 1000
+
+        Message.config({
+            // duration: 2,
+            maxCount: 3,
+            duration: 2
         })
+
+        Message.error(res.msg);
         return Promise.reject(error)
     }
 )

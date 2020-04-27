@@ -22,7 +22,7 @@
             <div>
               <img src="~@/assets/img/wx-blue.png" alt />&nbsp;&nbsp;
               <img src="~@/assets/img/tel-blue.png" alt />&nbsp;&nbsp;
-              <span>电话/微信：18219082540</span>
+              <span>电话/微信：19195682297</span>
             </div>
           </li>
         </ul>

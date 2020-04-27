@@ -17,21 +17,17 @@
         </a-row>
       </div>
 
-      <div class="logoList">
+      <div class="logo-list">
         <ul class="clearfix font18">
           <li v-for="(item, index) in projectList[currentSelect]" :key="index">
             <a-button type="primary" class="look-details" @click="gotodetails(item)">查看详情</a-button>
-            <img
-              v-lazy="require('../../assets/img/project-li-cover.png')"
-              alt
-              style="width:100%;height:100%;"
-            />
-            <span class="logoList text">{{ item.name }}</span>
+            <img v-lazy="item.img" alt style="width:100%;height:100%;" />
+            <span class="logo-list text">{{ item.name }}</span>
           </li>
         </ul>
 
-        <div class="lookMore d-flex justify-content-end align-items-center">
-          <a-button class="lookMore-btn" @click="lookMore">查看更多</a-button>
+        <div class="look-more d-flex justify-content-end align-items-center">
+          <a-button class="look-more-btn" @click="lookMore">查看更多</a-button>
         </div>
       </div>
     </div>
@@ -61,34 +57,40 @@ export default {
       projectList: {},
       currentSelect: "all",
       pageForm: {
-        start: 0, // 当前页码
-        end: 9, // 每页条数
-        totalPage: 0 // 总页数
+        pageNum: 1, // 当前页码
+        pageSize: 10, // 每页条数
       }
     };
   },
   mounted() {
+    this.pageForm = {
+      pageNum: 1, // 当前页码
+      pageSize: 10, // 每页条数
+      type: "all"
+    };
+    console.log('mounted');
+    
     this.getAllProject();
   },
   methods: {
     getAllProject() {
-      const start = this.pageForm.start;
-      const end = this.pageForm.end;
-      const type = this.currentSelect;
-      caselist(start, end, type)
-        .then(res => {
+      this.pageForm.pageNum = 1; // 重置页数
+      const pageNum = this.pageForm.pageNum; // 开始页数
+      const pageSize = this.pageForm.pageSize; // 结束页数
+      const type = this.currentSelect; // 类型
+
+      let form = {
+        pageNum,
+        pageSize,
+        type
+      };
+
+      caselist(form).then(res => {
           this.projectList = res.data;
-          // 一共多少页
-          this.pageForm.totalPage = Math.ceil(
-            res.data.length / this.pageForm.end
-          );
-          // 判断是否还有更多页
-          if (this.pageForm.start >= this.pageForm.totalPage) {
-            this.$message.warning("没有更多数据了！");
-          }
           this.sortAllProject();
-        })
-        .catch(err => {});
+        }).catch(err => {
+          console.log(err, "err");
+        });
     },
     //分类
     sortAllProject() {
@@ -109,22 +111,32 @@ export default {
       this.getAllProject();
     },
     lookMore() {
-      if (this.pageForm.start < this.pageForm.totalPage) {
-        this.pageForm.start++;
-        // this.getAllProject();
-        const start = this.pageForm.start;
-        const end = this.pageForm.end;
-        const type = this.currentSelect;
-        caselist(start, end, type).then(res => {
-          // 追加数据
-          if (res.status === 200) {
-            this.projectList[this.currentSelect] = this.projectList[this.currentSelect].concat(res.data);
-          }
-        });
-      }
+      this.pageForm.pageNum++;
+      const pageNum = this.pageForm.pageNum;
+      const pageSize = this.pageForm.pageSize;
+      const type = this.currentSelect;
+
+      let form = {
+        pageNum,
+        pageSize,
+        type
+      };
+
+      caselist(form).then(res => {
+        // 追加数据
+        if (res.code === 0 && res.data.length !== 0) {
+          this.projectList[this.currentSelect] = this.projectList[
+            this.currentSelect
+          ].concat(res.data);
+        } else {
+          this.$message.warning("没有更多数据了！");
+        }
+      });
     },
     gotodetails(item) {
-      this.$router.push({ name: "details", query: { name: item.name } });
+      // this.$router.push({ name: "details", query: { name: item.name } });
+      const name = item.name;
+      window.open(`/management?id=${name}&type=pdf&suffix=pdf`);
     }
   }
 };
@@ -146,10 +158,10 @@ export default {
     background: rgb(201, 201, 201);
     cursor: pointer;
   }
-  .logoList {
+  .logo-list {
     margin-top: 40px;
-    .lookMore {
-      .lookMore-btn {
+    .look-more {
+      .look-more-btn {
         width: 200px;
         height: 50px;
       }

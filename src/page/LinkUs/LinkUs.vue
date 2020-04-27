@@ -99,7 +99,13 @@
               :label-col="formItemLayout.labelCol"
               :wrapper-col="formItemLayout.wrapperCol"
             >
-              <a-input placeholder="Please input your corporate name" class="item-input" />
+              <a-input
+                v-decorator="[
+                'company'
+                ]"
+                placeholder="Please input your corporate name"
+                class="item-input"
+              />
             </a-form-item>
             <a-form-item
               :label-col="formItemLayout.labelCol"
@@ -119,7 +125,7 @@
               :label-col="formTailLayout.labelCol"
               :wrapper-col="formTailLayout.wrapperCol"
             >
-              <a-button type="primary" @click="check">提交</a-button>
+              <a-button type="primary" @click="submit">提交</a-button>
             </a-form-item>
           </a-form>
         </div>
@@ -129,6 +135,9 @@
 </template>
 
 <script>
+import { submitInfoForm } from "@/api/project";
+import {} from "@/public";
+
 const plainOptions = [
   { label: "LOGO设计", value: "LOGO设计" },
   { label: "宣传册设计", value: "宣传册设计" },
@@ -162,27 +171,56 @@ export default {
       checkNick: false,
       formItemLayout,
       formTailLayout,
-      form: this.$form.createForm(this)
+      form: this.$form.createForm(this),
+      checkedValues1: [],
+      checkedValues2: [],
+      checkedValues3: []
     };
   },
   methods: {
     // 多选框
     onChange1(checkedValues) {
-      console.log("checked = ", checkedValues);
-      console.log("value = ", this.value);
+      this.checkedValues1 = checkedValues;
     },
     onChange2(checkedValues) {
-      console.log("checked = ", checkedValues);
-      console.log("value = ", this.value);
+      this.checkedValues2 = checkedValues;
     },
     onChange3(checkedValues) {
-      console.log("checked = ", checkedValues);
-      console.log("value = ", this.value);
+      this.checkedValues3 = checkedValues;
     },
-    check() {
+    submit() {
       this.form.validateFields(err => {
         if (!err) {
-          console.info("success");
+
+          let res = this.checkedValues1.concat(
+            this.checkedValues2,
+            this.checkedValues3
+          );
+       
+
+          const service = res.join(','); // 服务项目
+          const companyVal = this.form.getFieldValue("company");
+          const company = companyVal ? companyVal : ''; // 公司
+          const name = this.form.getFieldValue("username"); // 姓名
+          const phone = this.form.getFieldValue("tel"); // 手机号码
+          const email = this.form.getFieldValue("email"); // 邮箱
+          const content = this.form.getFieldValue("leavingMsg"); // 补充说明
+
+          let form = {
+            service,
+            company,
+            name,
+            phone,
+            email,
+            content
+          };
+    
+          submitInfoForm(form).then(res => {
+            if (res.code === 0) {
+              this.$message.success("保存成功");
+              this.form.resetFields();
+            }
+          })
         }
       });
     },
