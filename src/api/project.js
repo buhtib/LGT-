@@ -1,6 +1,14 @@
 import request from './index'
 import QS from 'qs';
 
+export function casetype() {
+    return request({
+        url: '/casetype',
+        method: 'get'
+    })
+}
+
+
 export function caselist(form) {
     return request({
         url: '/caselist',

@@ -12,7 +12,7 @@
             class="col mr-5 text-center"
             :class="{ active: currentSelect == col.type }"
           >
-            <span>{{col.name}}</span>
+            <span>{{col.type_name}}</span>
           </a-col>
         </a-row>
       </div>
@@ -35,45 +35,40 @@
 </template>
 
 <script>
-import { caselist } from "../../api/project";
+import { casetype, caselist } from "../../api/project";
 export default {
   name: "Project",
   data() {
     return {
-      projectNameList: [
-        [
-          { name: "全部案例", type: "all" },
-          { name: "品牌VI设计", type: "vi" },
-          { name: "APP开发", type: "app" },
-          { name: "LOGO设计", type: "logo" }
-        ],
-        [
-          { name: "全部案例", type: "all" },
-          { name: "画册设计", type: "pa" },
-          { name: "包装设计", type: "pg" },
-          { name: "网站开发", type: "web" }
-        ]
-      ],
+      projectNameList: [],
       projectList: {},
       currentSelect: "all",
       pageForm: {
         pageNum: 1, // 当前页码
-        pageSize: 10, // 每页条数
+        pageSize: 10 // 每页条数
       }
     };
   },
+  watch: {
+    $route: "watchRouter"
+  },
   mounted() {
-    this.pageForm = {
-      pageNum: 1, // 当前页码
-      pageSize: 10, // 每页条数
-      type: "all"
-    };
-    console.log('mounted');
-    
-    this.getAllProject();
+    // this.getAllProject();
   },
   methods: {
-    getAllProject() {
+    // 重置数据
+    watchRouter(to, from) {
+      if (to.path == "/project") {
+        this.pageForm = {
+          pageNum: 1, // 当前页码
+          pageSize: 10 // 每页条数
+        };
+        this.currentSelect = "all"; // 类型
+        this.getAllProject();
+      }
+    },
+    // 获取数据
+    async getAllProject() {
       this.pageForm.pageNum = 1; // 重置页数
       const pageNum = this.pageForm.pageNum; // 开始页数
       const pageSize = this.pageForm.pageSize; // 结束页数
@@ -85,18 +80,42 @@ export default {
         type
       };
 
-      caselist(form).then(res => {
+      await casetype().then(res => {
+        if (res.code === 0) {
+          const result = res.data.reverse();
+          var arr = [];
+          // 一维数组分割为多维数组
+          for (var i = 0; i < result.length; i += 4) {
+            arr.push(result.slice(i, i + 4));
+          }
+          this.projectNameList = arr;
+        }
+      });
+
+      await caselist(form).then(res => {
+        if (res.code === 0) {
           this.projectList = res.data;
           this.sortAllProject();
-        }).catch(err => {
-          console.log(err, "err");
-        });
+        }
+      });
     },
     //分类
     sortAllProject() {
       let projectList = {};
 
-      ["app", "logo", "pa", "pg", "vi", "web"].map(type => {
+      const classificationArr = [
+        "app",
+        "logo",
+        "pa",
+        "pg",
+        "vi",
+        "web",
+        "pb",
+        "sm",
+        "pt"
+      ];
+
+      classificationArr.map(type => {
         projectList[type] = this.projectList.filter(item => {
           return item.type == type;
         });
@@ -110,6 +129,7 @@ export default {
       this.currentSelect = type;
       this.getAllProject();
     },
+    // 查看更多
     lookMore() {
       this.pageForm.pageNum++;
       const pageNum = this.pageForm.pageNum;
@@ -133,10 +153,17 @@ export default {
         }
       });
     },
+    // 查看详情
     gotodetails(item) {
       // this.$router.push({ name: "details", query: { name: item.name } });
+      const url = item.url;
       const name = item.name;
-      window.open(`/management?id=${name}&type=pdf&suffix=pdf`);
+
+      if (!url) {
+        window.open(`/management?id=${name}&type=pdf&suffix=pdf`);
+      } else {
+        window.open(url);
+      }
     }
   }
 };
@@ -210,17 +237,15 @@ export default {
   }
 
   .select-project {
-    height: 90px;
+    height: 150px;
     margin-top: 40px;
-    .ant-row-flex:last-child {
+    .ant-row-flex {
       margin-top: 30px;
-      .col:first-child {
-        opacity: 0;
-      }
     }
     .col {
       width: 160px;
       height: 30px;
+      margin: 0 50px;
       font-size: 20px;
       color: #333333;
       border-radius: 5px;

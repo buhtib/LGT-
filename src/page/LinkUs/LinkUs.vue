@@ -136,7 +136,6 @@
 
 <script>
 import { submitInfoForm } from "@/api/project";
-import {} from "@/public";
 
 const plainOptions = [
   { label: "LOGO设计", value: "LOGO设计" },
