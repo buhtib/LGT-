@@ -60,55 +60,51 @@ export default {
       peoples: [
         {
           col1: {
-            name: "汤基彬",
-            job: "项目主管",
-            img:require("../../assets/img/B.jpg"),
+            name: "智能灌溉",
+            img:require("../../assets/img/irrigation.png"),
             intro_text_row1:
-              "曾参与各大行业的网站开发，有着丰富的经验开发知识。用自身的专业挑战事业的最颠峰。",
-            intro_text_row2: "LGT设计工作室创始人之一。"
+              "智能灌溉系统、智能农业物联网精细农业自控系统。是保证农业作物需水量的前提下，实现节约用水，节省人工，节省成本的应用解决方案。",
           },
           col2: {
-            name: "卢广宗",
-            job: "开发者",
-            img:require("../../assets/img/Z.jpg"),
+            name: "智能灌溉",
+            img:require("../../assets/img/irrigation.png"),
             intro_text_row1:
-              "曾在OPPO公司参与多项开发的项目，是中国互联网的年轻一代开发者。",
-            intro_text_row2: "LGT设计工作室创始人之一。"
+              "智能灌溉系统、智能农业物联网精细农业自控系统。是保证农业作物需水量的前提下，实现节约用水，节省人工，节省成本的应用解决方案。",
           },
-          col3: {
-            name: "李嘉诚",
-            job: "开发者",
-            img:require("../../assets/img/L.jpg"),
+           col3: {
+            name: "智能灌溉",
+            img:require("../../assets/img/irrigation.png"),
             intro_text_row1:
-              "担任多家公司的项目负责人兼以及负责公司项目开发，也在各大行业中参与其开发。",
-            intro_text_row2: "LGT设计工作室创始人之一。"
-          }
+              "智能灌溉系统、智能农业物联网精细农业自控系统。是保证农业作物需水量的前提下，实现节约用水，节省人工，节省成本的应用解决方案。",
+          },
         },
         {
           col1: {
-            name: "汤少清",
-            job: "设计总监",
-            img:require("../../assets/img/Q.jpg"),
+            name: "智能家居",
+            img:require("../../assets/img/device.png"),
             intro_text_row1:
-              "曾从事不同行业的设计工作，2016年开始参与内地的品牌设计业务。",
-            intro_text_row2: "LGT设计工作室创始人之一。"
+              "这是一套无线人工智能，结合你的居家环境，生活习惯，灵活，稳定，安全。不会给你带来需要重新装修的烦恼，无线升级方案，让你无忧享有智能生活。",
           },
+          // col2: {
+          //   name: "叶国凤",
+          //   job: "品牌设计",
+          //   img:require("../../assets/img/Y.jpg"),
+          //   intro_text_row1:
+          //     "曾参与各大行业的品牌设计以及品牌定位升级，服务近百个品牌的项目。",
+          //   intro_text_row2: "LGT设计工作室创始人之一。"
+          // },
           col2: {
-            name: "叶国凤",
-            job: "品牌设计",
-            img:require("../../assets/img/Y.jpg"),
+            name: "智能家居",
+            img:require("../../assets/img/device.png"),
             intro_text_row1:
-              "曾参与各大行业的品牌设计以及品牌定位升级，服务近百个品牌的项目。",
-            intro_text_row2: "LGT设计工作室创始人之一。"
+              "这是一套无线人工智能，结合你的居家环境，生活习惯，灵活，稳定，安全。不会给你带来需要重新装修的烦恼，无线升级方案，让你无忧享有智能生活。",
           },
           col3: {
-            name: "汤少萍",
-            job: "HR负责人",
-            img:require("../../assets/img/P.jpg"),
+            name: "智能家居",
+            img:require("../../assets/img/device.png"),
             intro_text_row1:
-              "主要接待客户并解决客户的要求问题，品牌知识资深的HR，曾接待来自不同行业的客户。",
-            intro_text_row2: "LGT设计工作室创始人之一。"
-          }
+              "这是一套无线人工智能，结合你的居家环境，生活习惯，灵活，稳定，安全。不会给你带来需要重新装修的烦恼，无线升级方案，让你无忧享有智能生活。",
+          },
         }
       ]
     };
@@ -129,6 +125,9 @@ export default {
         }
         .col-list {
           margin-top: 28px;
+          .lineheight1 {
+            color: #000000;
+          }
           .col-list-line {
             width: 100%;
             height: 1px;

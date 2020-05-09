@@ -9,12 +9,14 @@ export function casetype() {
 }
 
 
-export function caselist(form) {
+
+
+export function caselist(data) {
     return request({
         url: '/caselist',
         method: 'post',
         headers: { 'content-type': 'application/x-www-form-urlencoded; charset=utf-8' },
-        data: QS.stringify(form)
+        data: QS.stringify(data)
     })
 }
 
@@ -24,16 +26,16 @@ export function management(params) {
         url: '/management',
         method: 'get',
         headers: { 'content-type': 'application/x-www-form-urlencoded; charset=utf-8' },
-        params: params
+        params
     })
 }
 
 
-export function submitInfoForm(form) {
+export function submitInfoForm(data) {
     return request({
         url: '/userSubmitInfo',
         method: 'post',
         headers: { 'content-type': 'application/x-www-form-urlencoded; charset=utf-8' },
-        data: QS.stringify(form)
+        data: QS.stringify(data)
     })
 }

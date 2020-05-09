@@ -7,6 +7,7 @@ import PageHeader from '@/components/PageHeader/PageHeader'
 import PageFooter from '@/components/PageFooter/PageFooter'
 import CenterText from '@/components/CenterText/CenterText'
 import Banner from '@/components/Banner/Banner'
+import share from '@/components/share/share'
 
 //使用阿里图标库 的IconFont组件
 import { Icon } from 'ant-design-vue';
@@ -22,6 +23,7 @@ export default {
         Vue.component('PageFooter', PageFooter)
         Vue.component('CenterText', CenterText)
         Vue.component('Banner', Banner)
+        Vue.component('share', share)
 
         publicFn(Vue)
             //假的占位图地址  后面接上尺寸

@@ -21,7 +21,7 @@
         <ul class="clearfix font18">
           <li v-for="(item, index) in projectList[currentSelect]" :key="index">
             <a-button type="primary" class="look-details" @click="gotodetails(item)">查看详情</a-button>
-            <img v-lazy="item.img" alt style="width:100%;height:100%;" />
+            <img v-lazy="item.img" style="width:100%;height:100%;" />
             <span class="logo-list text">{{ item.name }}</span>
           </li>
         </ul>
@@ -79,7 +79,7 @@ export default {
         pageSize,
         type
       };
-
+    
       await casetype().then(res => {
         if (res.code === 0) {
           const result = res.data.reverse();

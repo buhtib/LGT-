@@ -76,7 +76,7 @@ module.exports = {
             "/": {
                 "target": "http://192.168.31.50:8000",
                 "changeOrigin": true,
-                ws: true,
+                ws: false,
                 port: 8081, // 端口
                 pathRewrite: {
                     '^/': ''

@@ -1,3 +1,4 @@
+<!-- banner  -->
 <template>
   <div class="carousel" v-if="$route.meta.banner !== 'null'">
     <a-carousel autoplay  v-if="$route.meta.banner == 0" >

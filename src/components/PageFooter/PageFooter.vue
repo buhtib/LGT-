@@ -40,7 +40,7 @@
               </div>
               <span class="separation-line">|</span>
             </div>
-            <span>深圳市龙华区民治樟坑一区129栋</span>
+            <span>南宁市西乡塘区西乡塘街道新村</span>
           </li>
         </ul>
 
@@ -51,7 +51,7 @@
             style="padding-right:85px;"
           >
             <div class>
-              <img class="gw-qrcode" v-lazy="require('../../assets/img/gw-qrcode.jpg')" alt="hehe" />
+              <img class="gw-qrcode" v-lazy="require('../../assets/img/gw-qrcode (2).png')" alt="hehe" />
             </div>
             <span class="mt-1">资深品牌顾问</span>
           </a-col>
@@ -74,15 +74,18 @@ export default {
     return {
       serviceList: [
         "LOGO设计",
-        "宣传册设计",
-        "展架设计",
         "画册设计",
-        "易拉宝设计",
-        "包装设计",
-        "品牌VI手册设计",
-        "小程序开发",
+        "易拉宝",
+        "海报设计",
+        "VI品牌",
+        "品牌包装",
+        "宣传页",
+        "APP开发",
         "网站开发",
-        "APP开发"
+        "小程序",
+        "网站维护",
+        "智能灌溉",
+        "智能家居"
       ]
     };
   }

@@ -50,7 +50,7 @@ export default {
     return {
       navList: [
         { name: "首页", path: "/home" },
-        { name: "LGT创意", path: "/brand" },
+        { name: "应用方案", path: "/brand" },
         { name: "服务范围", path: "/service" },
         { name: "LGT项目", path: "/project" },
         { name: "联系我们", path: "/linkus" }

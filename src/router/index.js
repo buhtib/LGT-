@@ -28,10 +28,10 @@ let routes = [{
                 path: '/brand',
                 name: 'brand',
                 meta: {
-                    title: 'LGT创意',
+                    title: '应用方案',
                     centerText: {
-                        header: "LGT核心团队",
-                        bottom: "品牌创始人"
+                        header: "INTERNET OF THINGS APPLICATION SCHEME",
+                        bottom: "万物互联应用方案"
                     },
                     banner: 1
                 },
