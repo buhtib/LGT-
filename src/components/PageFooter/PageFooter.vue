@@ -51,7 +51,11 @@
             style="padding-right:85px;"
           >
             <div class>
-              <img class="gw-qrcode" v-lazy="require('../../assets/img/gw-qrcode (2).png')" alt="hehe" />
+              <img
+                class="gw-qrcode"
+                v-lazy="require('../../assets/img/gw-qrcode (2).png')"
+                alt="hehe"
+              />
             </div>
             <span class="mt-1">资深品牌顾问</span>
           </a-col>
@@ -80,10 +84,11 @@ export default {
         "VI品牌",
         "品牌包装",
         "宣传页",
-        "APP开发",
+        "名片设计",
         "网站开发",
         "小程序",
         "网站维护",
+        "APP开发",
         "智能灌溉",
         "智能家居"
       ]
@@ -117,6 +122,12 @@ export default {
           min-width: 24%;
           white-space: nowrap;
           float: left;
+          span {
+            cursor: pointer;
+            &:hover {
+              color: #348ccd;
+            }
+          }
         }
       }
 

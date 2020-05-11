@@ -5,7 +5,7 @@
     <div class="section">
       <div class="brand-people">
         <a-row
-          class="row font12"
+          class="row font12 animated fadeInUp"
           v-for="(row, index) in peoples"
           :key="index"
           type="flex"

@@ -53,7 +53,7 @@ export default {
     $route: "watchRouter"
   },
   mounted() {
-    // this.getAllProject();
+    this.getAllProject();
   },
   methods: {
     // 重置数据

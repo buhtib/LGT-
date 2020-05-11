@@ -75,7 +75,7 @@ module.exports = {
         proxy: {
             "/": {
                 "target": "http://192.168.31.50:8000",
-                "changeOrigin": true,
+                "changeOrigin": true, //是否跨域
                 ws: false,
                 port: 8081, // 端口
                 pathRewrite: {

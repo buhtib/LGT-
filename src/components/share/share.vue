@@ -10,10 +10,10 @@
           </a>
           <a-menu slot="overlay" class="share1-menu">
             <a-menu-item>
-             <a href='tencent://message/?uin=1374037049&Site=&Menu=yes'><a-icon type="qq" /></a> 
+             <a href='tencent://message/?uin=1374037049&Site=&Menu=yes'><a-icon type="qq" class='colorfff'  /></a> 
             </a-menu-item>
             <a-menu-item class="wechat-position" @mouseenter="enter" @mouseleave="leave">
-              <a-icon type="wechat" />
+              <a-icon type="wechat" class='colorfff'  />
             </a-menu-item>
           </a-menu>
         </a-dropdown>
@@ -24,9 +24,10 @@
           <span>◆</span>
         </div>
         <div class="wechat-QRcode-img">
-          <img src="../../assets/img/gw-qrcode (2).png" alt="">
+          <img src="../../assets/img/gw-qrcode (2).png">
         </div>
-        <span>请扫码添加</span>
+        <p>扫一扫二维码图案</p>
+        <p>加微信沟通需求更方便</p>
       </div>
 
       <template>
@@ -59,7 +60,6 @@ export default {
     },
     leave() {
       this.isShowWechatQRCode = false;
-
     }
   }
 };
@@ -75,10 +75,6 @@ export default {
 
   .share-box {
     .share1 {
-      .share1-menu {
-        margin-bottom: 20px;
-        background-color: #73d661;
-      }
       .wechat-position {
         position: relative;
       }
@@ -96,19 +92,20 @@ export default {
       width: 40px;
       line-height: 40px;
       border-radius: 4px;
-      background-color: #73d661;
+      background-color: Rgba(0,0,0,0.5);
       text-align: center;
     }
 
     .wechat-QRcode-box {
       position: absolute;
       top: -80px;
-      left: -135px;
-      width: 110px;
-      height: 120px;
+      left: -155px;
+      width: 140px;
+      height: 140px;
       padding: 10px 10px 0;
-      background: #73d661;
-      color: #ffffff;
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 9px;
       text-align: center;
       .wx-arrow {
         top: 50px;
@@ -121,7 +118,12 @@ export default {
           line-height: 32px;
           overflow: hidden;
           color: #73d661;
+          color: Rgba(0,0,0,0.5);
         }
+      }
+      p {
+        font-size: 9px;
+        margin: 0;
       }
     }
 

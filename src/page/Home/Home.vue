@@ -7,13 +7,13 @@
         <!-- <carousel></carousel> -->
 
         <a-row :gutter="30" class="row font16" type="flex">
-          <a-col :span="11">
+          <a-col :span="11" class="wow  fadeInLeft">
             <h1 class="left_title">关于我们</h1>
             <div
               class="text_indent2"
             >LGT设计是一家具有原创作经验丰富的团队，专业UI设计、网站开发、小程序开发、结合自主研发的智能灌溉、智能家居等智能核心技术。拥有多维度的万物互联应用解决方案，以7×24×4的服务理念为用户提供满意的设计、技术服务及专业解决方案。</div>
           </a-col>
-          <a-col :span="13" class="d-flex align-items-end justify-content-end">
+          <a-col :span="13" class="d-flex align-items-end justify-content-end animated fadeInRight">
             <img
               v-lazy="require('../../assets/img/gzs.png')"
               alt
@@ -30,15 +30,9 @@
           </div>
         </div>
 
-        <div class="bottom-box">
-          <img src="../../assets/img/bottom-img.jpg" class="bottom-img">
+        <div class="bottom-box wow bounceInLeft">
+          <img src="../../assets/img/bottom-img.jpg" class="bottom-img" />
         </div>
-        <!-- <div class="img-list">
-          <img class="img-list-background" src="../../assets/img/home-img/background.png" />
-          <div v-for="(item,index) in imgList" :key="index">
-            <img v-lazy="item.img" :class="item.class" class="img" />
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
@@ -46,57 +40,33 @@
 
 <script>
 import carousel from "./carousel";
+import { WOW } from "wowjs";
 
 export default {
   name: "Home",
 
   data() {
-    return {
-      imgList: [
-        {
-          img: require("../../assets/img/home-img/ciwei.png"),
-          class: "ciwei"
-        },
-        {
-          img: require("../../assets/img/home-img/jingxi.png"),
-          class: "jingxi"
-        },
-        {
-          img: require("../../assets/img/home-img/kuaileningmeng.png"),
-          class: "kuaileningmeng"
-        },
-        {
-          img: require("../../assets/img/home-img/kudouwang.png"),
-          class: "kudouwang"
-        },
-        {
-          img: require("../../assets/img/home-img/lazi.png"),
-          class: "lazi"
-        },
-        {
-          img: require("../../assets/img/home-img/mcat-01.png"),
-          class: "mcat-01"
-        },
-         {
-          img: require("../../assets/img/home-img/yundongjituan.png"),
-          class: "yundongjituan"
-        },
-       
-        {
-          img: require("../../assets/img/home-img/sichao.png"),
-          class: "sichao"
-        },
-        {
-          img: require("../../assets/img/home-img/ruixingtang.png"),
-          class: "ruixingtang"
-        },
-      ]
-    };
+    return {};
   },
   components: {
     carousel
   },
-  methods: {}
+  created() {},
+  mounted() {
+    this.$nextTick(() => {
+
+      var wow = new WOW({
+        boxClass:"wow",
+        animateClass:"animated",
+        offset: 0,
+        mobile: true,
+        live: true
+      });
+      wow.init();
+    })
+  },
+  methods: {
+  }
 };
 </script>
 
@@ -160,55 +130,6 @@ export default {
         width: 100%;
       }
     }
-
-    // .img-list {
-    //   position: relative;
-    //   margin-top: 40px;
-    //   .img-list-background {
-    //     width: 100%;
-    //   }
-    //   .img {
-    //     position: absolute;
-    //   }
-    //   .ciwei {
-    //     top: 120px;
-    //     left: 130px;
-    //   }
-    //   .jingxi {
-    //     top: 200px;
-    //     left: 220px;
-    //   }
-    //   .kuaileningmeng {
-    //     top: 50px;
-    //     left: 320px;
-    //   }
-    //   .kudouwang {
-    //     top: 180px;
-    //     left: 410px;
-    //   }
-    //   .lazi {
-    //     top: 70px;
-    //     left: 540px;
-    //   }
-    //   .mcat-01 {
-    //     top: 40px;
-    //     left: 710px;
-    //   }
-    //   .ruixingtang {
-    //      top: 190px;
-    //     left: 1050px;
-    //   }
-    //   .sichao {
-    //     top: 30px;
-    //     left: 960px;
-    //   }
-    //   .yundongjituan {
-       
-
-    //     top: 160px;
-    //     left: 770px;
-    //   }
-    // }
   }
 }
 </style>
