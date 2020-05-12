@@ -8,9 +8,9 @@
     <!-- 中间文字 -->
     <center-text :centerText="$route.meta.centerText" />
     <transition enter-active-class="animated fadeIn">
-      <keep-alive>
+      <!-- <keep-alive> -->
         <router-view></router-view>
-      </keep-alive>
+      <!-- </keep-alive> -->
     </transition>
     <share></share>
     <page-footer></page-footer>

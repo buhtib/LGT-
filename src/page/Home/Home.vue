@@ -7,13 +7,13 @@
         <!-- <carousel></carousel> -->
 
         <a-row :gutter="30" class="row font16" type="flex">
-          <a-col :span="11" class="wow  fadeInLeft">
+          <a-col :span="11" class="wow fadeInLeft">
             <h1 class="left_title">关于我们</h1>
             <div
               class="text_indent2"
             >LGT设计是一家具有原创作经验丰富的团队，专业UI设计、网站开发、小程序开发、结合自主研发的智能灌溉、智能家居等智能核心技术。拥有多维度的万物互联应用解决方案，以7×24×4的服务理念为用户提供满意的设计、技术服务及专业解决方案。</div>
           </a-col>
-          <a-col :span="13" class="d-flex align-items-end justify-content-end animated fadeInRight">
+          <a-col :span="13" class="d-flex align-items-end justify-content-end wow fadeInRight">
             <img
               v-lazy="require('../../assets/img/gzs.png')"
               alt
@@ -30,7 +30,7 @@
           </div>
         </div>
 
-        <div class="bottom-box wow bounceInLeft">
+        <div class="bottom-box wow slideInUp">
           <img src="../../assets/img/bottom-img.jpg" class="bottom-img" />
         </div>
       </div>
@@ -53,20 +53,16 @@ export default {
   },
   created() {},
   mounted() {
-    this.$nextTick(() => {
-
-      var wow = new WOW({
-        boxClass:"wow",
-        animateClass:"animated",
-        offset: 0,
-        mobile: true,
-        live: true
-      });
-      wow.init();
-    })
+    var wow = new WOW({
+      boxClass: "wow",
+      animateClass: "animated",
+      offset: 0,
+      mobile: true,
+      live: false
+    });
+    wow.init();
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 

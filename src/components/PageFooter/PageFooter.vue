@@ -99,6 +99,8 @@ export default {
 
 <style lang="less" scoped>
 .page-footer {
+  position: relative;
+  z-index: 99;
   height: 180px;
   margin-top: 40px;
   padding: 40px 0;

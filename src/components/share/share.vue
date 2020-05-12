@@ -2,7 +2,6 @@
 <template>
   <div class="share-page">
     <div class="share-box">
-
       <template>
         <a-dropdown placement="topCenter" class="share1" overlayClassName="resetStyle">
           <a class="ant-dropdown-link">
@@ -10,10 +9,12 @@
           </a>
           <a-menu slot="overlay" class="share1-menu">
             <a-menu-item>
-             <a href='tencent://message/?uin=1374037049&Site=&Menu=yes'><a-icon type="qq" class='colorfff'  /></a> 
+              <a href="tencent://message/?uin=1374037049&Site=&Menu=yes">
+                <a-icon type="qq" class="colorfff" />
+              </a>
             </a-menu-item>
             <a-menu-item class="wechat-position" @mouseenter="enter" @mouseleave="leave">
-              <a-icon type="wechat" class='colorfff'  />
+              <a-icon type="wechat" class="colorfff" />
             </a-menu-item>
           </a-menu>
         </a-dropdown>
@@ -24,7 +25,7 @@
           <span>◆</span>
         </div>
         <div class="wechat-QRcode-img">
-          <img src="../../assets/img/gw-qrcode (2).png">
+          <img src="../../assets/img/gw-qrcode (2).png" />
         </div>
         <p>扫一扫二维码图案</p>
         <p>加微信沟通需求更方便</p>
@@ -39,7 +40,6 @@
           </a>
         </a-dropdown>
       </template>
-
     </div>
   </div>
 </template>
@@ -68,7 +68,7 @@ export default {
 <style lang='less' scoped>
 .share-page {
   position: fixed;
-  //   z-index: 99;
+  z-index: 100;
   display: block;
   bottom: 95px;
   right: 10px;
@@ -92,7 +92,7 @@ export default {
       width: 40px;
       line-height: 40px;
       border-radius: 4px;
-      background-color: Rgba(0,0,0,0.5);
+      background-color: Rgba(0, 0, 0, 0.5);
       text-align: center;
     }
 
@@ -118,7 +118,7 @@ export default {
           line-height: 32px;
           overflow: hidden;
           color: #73d661;
-          color: Rgba(0,0,0,0.5);
+          color: Rgba(0, 0, 0, 0.5);
         }
       }
       p {
@@ -126,7 +126,6 @@ export default {
         margin: 0;
       }
     }
-
   }
 }
 </style>
