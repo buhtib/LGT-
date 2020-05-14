@@ -1,4 +1,4 @@
-<!-- LGT项目-->
+<!-- 经典项目-->
 <template>
   <div class="project">
     <div class="section">
@@ -20,8 +20,8 @@
       <div class="logo-list">
         <ul class="clearfix font18">
           <li v-for="(item, index) in projectList[currentSelect]" :key="index">
-            <a-button type="primary" class="look-details" @click="gotodetails(item)">查看详情</a-button>
-            <img v-lazy="item.img" style="width:100%;height:100%;" />
+            <a-button type="primary" class="look-details" @click="gotodetails(item)" v-show="isShowDetailsBtn">查看详情</a-button>
+            <img v-lazy="item.img" style="object-fit: cover;width:100%;height:100%;" />
             <span class="logo-list text">{{ item.name }}</span>
           </li>
         </ul>
@@ -42,17 +42,20 @@ export default {
     return {
       projectNameList: [],
       projectList: {},
-      currentSelect: "all",
+      currentSelect: "logo",
       pageForm: {
         pageNum: 1, // 当前页码
         pageSize: 10 // 每页条数
-      }
+      },
+      isShowDetailsBtn: false
     };
   },
   watch: {
     $route: "watchRouter"
   },
   mounted() {
+    console.log(this.$route.query,'this.$route.query');
+    
     this.getAllProject();
   },
   methods: {
@@ -63,7 +66,7 @@ export default {
           pageNum: 1, // 当前页码
           pageSize: 10 // 每页条数
         };
-        this.currentSelect = "all"; // 类型
+        this.currentSelect = "logo"; // 类型
         this.getAllProject();
       }
     },
@@ -79,25 +82,32 @@ export default {
         pageSize,
         type
       };
-    
-      await casetype().then(res => {
-        if (res.code === 0) {
-          const result = res.data.reverse();
-          var arr = [];
-          // 一维数组分割为多维数组
-          for (var i = 0; i < result.length; i += 4) {
-            arr.push(result.slice(i, i + 4));
-          }
-          this.projectNameList = arr;
-        }
-      });
+      try {
 
-      await caselist(form).then(res => {
-        if (res.code === 0) {
-          this.projectList = res.data;
-          this.sortAllProject();
+        await casetype().then(res => {
+          if (res.code === 0) {
+            const result = res.data;
+            var arr = [];
+            // 一维数组分割为多维数组
+            for (var i = 0; i < result.length; i += 4) {
+              arr.push(result.slice(i, i + 4));
+            }
+            this.projectNameList = arr;
+          }
+        });
+
+        await caselist(form).then(res => {
+          if (res.code === 0) {
+            this.projectList = res.data;
+            this.sortAllProject();
+          }
+        });
+
+      } catch (error) {
+        if (error) {
+          this.$message.error("加载失败,请重新尝试");
         }
-      });
+      }
     },
     //分类
     sortAllProject() {
@@ -117,6 +127,13 @@ export default {
 
       classificationArr.map(type => {
         projectList[type] = this.projectList.filter(item => {
+      
+          if (item.type == 'logo' || item.type == 'sm' ) {
+            this.isShowDetailsBtn = false;
+          } else {
+            this.isShowDetailsBtn = true;
+          }
+          
           return item.type == type;
         });
       });
@@ -158,9 +175,10 @@ export default {
       // this.$router.push({ name: "details", query: { name: item.name } });
       const url = item.url;
       const name = item.name;
+      const type = item.type;
 
       if (!url) {
-        window.open(`/management?id=${name}&type=pdf&suffix=pdf`);
+        window.open(`/management?id=${name}&type=pdf/${type}&suffix=pdf`);
       } else {
         window.open(url);
       }
@@ -170,6 +188,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.opacity(@val) {
+  opacity: @val;
+};
+
 .project {
   .allCase {
     background: rgb(201, 201, 201);
@@ -201,13 +223,14 @@ export default {
         width: 24%;
         height: 281px;
         margin: 74px 1% 20px 0;
+        box-shadow: 0px 0px 10px -5px rgba(0, 0, 0);
         background-color: #eee;
         color: blue;
         text-align: center;
         cursor: pointer;
         img {
           &:hover {
-            opacity: 0.3;
+            .opacity(0.3);
             transition: 0.8s;
           }
         }
@@ -221,6 +244,7 @@ export default {
           width: 109px;
           margin: auto;
           opacity: 0;
+          
         }
         &:hover .look-details {
           opacity: 1;

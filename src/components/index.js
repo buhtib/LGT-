@@ -5,7 +5,7 @@ import publicFn from '@/public'
  */
 import PageHeader from '@/components/PageHeader/PageHeader'
 import PageFooter from '@/components/PageFooter/PageFooter'
-import CenterText from '@/components/CenterText/CenterText'
+// import CenterText from '@/components/CenterText/CenterText'
 import Banner from '@/components/Banner/Banner'
 import share from '@/components/share/share'
 
@@ -21,7 +21,7 @@ export default {
     install(Vue) {
         Vue.component('PageHeader', PageHeader)
         Vue.component('PageFooter', PageFooter)
-        Vue.component('CenterText', CenterText)
+            // Vue.component('CenterText', CenterText)
         Vue.component('Banner', Banner)
         Vue.component('share', share)
 

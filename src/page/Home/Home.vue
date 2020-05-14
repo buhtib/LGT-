@@ -4,28 +4,25 @@
     <div class="color-Piece"></div>
     <div class="section">
       <div class="home-intro">
-        <!-- <carousel></carousel> -->
-
         <a-row :gutter="30" class="row font16" type="flex">
           <a-col :span="11" class="wow fadeInLeft">
-            <h1 class="left_title">关于我们</h1>
+            <h1 class="left_title">公司简介</h1>
             <div
               class="text_indent2"
-            >LGT设计是一家具有原创作经验丰富的团队，专业UI设计、网站开发、小程序开发、结合自主研发的智能灌溉、智能家居等智能核心技术。拥有多维度的万物互联应用解决方案，以7×24×4的服务理念为用户提供满意的设计、技术服务及专业解决方案。</div>
+            >智能桂联是一家具有原创作经验丰富的团队，专业UI设计、网站开发、小程序开发、结合自主研发的智能灌溉、智能家居等智能核心技术。拥有多维度的万物互联应用解决方案，以7×24×4的服务理念为用户提供满意的设计、技术服务及专业解决方案。</div>
           </a-col>
           <a-col :span="13" class="d-flex align-items-end justify-content-end wow fadeInRight">
             <img
-              v-lazy="require('../../assets/img/gzs.png')"
-              alt
+              v-lazy="require('../../assets/img/home-img/LOGO.png')"
               style="height:300px; width:430px;"
             />
           </a-col>
         </a-row>
 
         <div class="center-text">
-          <h1 class="center_title">用设计塑造品牌价值</h1>
-          <div class="text_indent2">
-            LGT设计工作室已经服务各行业超过三百多家的公司以及店铺，我们有信心赢得客户良好口碑和高度满意的依据，唯有客户的满意才能让我们继续努力向前冲，追随时
+          <h1 class="center_title wow slideInUp">用设计塑造品牌价值</h1>
+          <div class="text_indent2 wow slideInUp">
+           智能桂联已经服务各行业超过三百多家的公司以及店铺，我们有信心赢得客户良好口碑和高度满意的依据，唯有客户的满意才能让我们继续努力向前冲，追随时
             代的发展，保持设计的原创。秉承“客户满意就是我们的成功”的服务理念，为用户提供便利、经济的个性化全程智能应用解决方案，让用户体验互联网智能时代。
           </div>
         </div>
@@ -39,7 +36,6 @@
 </template>
 
 <script>
-import carousel from "./carousel";
 import { WOW } from "wowjs";
 
 export default {
@@ -47,9 +43,6 @@ export default {
 
   data() {
     return {};
-  },
-  components: {
-    carousel
   },
   created() {},
   mounted() {
@@ -79,7 +72,7 @@ export default {
       margin-top: 40px;
       .left_title {
         line-height: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         padding-left: 10px;
         font-size: 30px;
         font-weight: bold;
@@ -114,7 +107,7 @@ export default {
     .center-text {
       margin-top: 80px;
       .center_title {
-        padding-bottom: 40px;
+        margin-bottom: 20px;
         text-align: center;
         font-size: 30px;
       }

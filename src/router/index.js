@@ -6,13 +6,13 @@ Vue.use(Router)
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 const NotFound = () =>
-    import ( /* webpackChunkName: "page" */ '@/components/notFound.vue');
+    import ( /* webpackChunkName: "page" */ '@/components/error/notFound');
 
 
 let routes = [{
         path: '/',
         component: () =>
-            import ( /* webpackChunkName: "page" */ '@/components/BaseLayout.vue'),
+            import ( /* webpackChunkName: "page" */ '@/components/BaseLayout'),
         redirect: '/home',
         children: [{
                 path: '/home',
@@ -22,61 +22,49 @@ let routes = [{
                     banner: 0
                 },
                 component: () =>
-                    import ( /* webpackChunkName: "page" */ '@/page/Home/Home.vue')
+                    import ( /* webpackChunkName: "page" */ '@/page/Home/Home')
             },
             {
                 path: '/brand',
                 name: 'brand',
                 meta: {
                     title: '应用方案',
-                    centerText: {
-                        header: "INTERNET OF THINGS APPLICATION SCHEME",
-                        bottom: "万物互联应用方案"
-                    },
+                    // centerText: {
+                    //     header: "INTERNET OF THINGS APPLICATION SCHEME",
+                    //     bottom: "万物互联应用方案"
+                    // },
                     banner: 1
                 },
                 component: () =>
-                    import ( /* webpackChunkName: "page" */ '@/page/Brand/Brand.vue')
+                    import ( /* webpackChunkName: "page" */ '@/page/Brand/Brand')
             },
             {
-                path: '/service',
-                name: 'service',
+                path: '/applets',
+                name: 'applets',
                 meta: {
-                    title: '服务范围',
-                    centerText: {
-                        header: "SERVICE SCOPE",
-                        bottom: "服务范围"
-                    },
+                    title: '小程序',
+                    // centerText: {
+                    //     header: "applets",
+                    //     bottom: "小程序"
+                    // },
                     banner: 2
                 },
                 component: () =>
-                    import ( /* webpackChunkName: "page" */ '@/page/Service/Service.vue')
+                    import ( /* webpackChunkName: "page" */ '@/page/applets/applets')
             },
             {
                 path: '/project',
                 name: 'project',
                 meta: {
-                    title: 'LGT项目',
-                    centerText: {
-                        header: "LGT PROJECT",
-                        bottom: "LGT项目"
-                    },
+                    title: '经典项目',
+                    // centerText: {
+                    //     header: "ZNGL PROJECT",
+                    //     bottom: "经典项目"
+                    // },
                     banner: 3
                 },
                 component: () =>
-                    import ( /* webpackChunkName: "page" */ '@/page/Project/Project.vue'),
-
-            },
-            {
-
-                path: "/details",
-                name: "details",
-                meta: {
-                    title: '详情',
-                    banner: 'null'
-                },
-                component: () =>
-                    import ( /* webpackChunkName: "page" */ '@/page/Project/Details.vue')
+                    import ( /* webpackChunkName: "page" */ '@/page/Project/Project'),
 
             },
             {
@@ -91,7 +79,7 @@ let routes = [{
                     banner: 1
                 },
                 component: () =>
-                    import ( /* webpackChunkName: "page" */ '@/page/LinkUs/LinkUs.vue')
+                    import ( /* webpackChunkName: "page" */ '@/page/LinkUs/LinkUs')
             },
         ]
     },

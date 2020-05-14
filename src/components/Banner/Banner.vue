@@ -1,18 +1,6 @@
 <!-- banner  -->
 <template>
   <div class="carousel" v-if="$route.meta.banner !== 'null'">
-    <!-- <a-carousel autoplay  v-if="$route.meta.banner == 0" >
-        <div class="carousel">
-            <img src="~@/assets/img/banner1.jpg" alt="slide" class="img_cover" />
-        </div>
-        <div class="carousel">
-            <img src="~@/assets/img/banner2.jpg" alt="slide" class="img_cover" />
-        </div>
-        <div class="carousel">
-            <img src="~@/assets/img/banner3.jpg" alt="slide" class="img_cover" />
-        </div>
-    </a-carousel>-->
-
     <a-carousel arrows autoplay effect="fade" v-if="$route.meta.banner == 0">
       <div slot="prevArrow" class="custom-slick-arrow" style="left: 10px;zIndex: 1">
         <a-icon type="left-circle" />
@@ -21,10 +9,10 @@
         <a-icon type="right-circle" />
       </div>
       <div class="carousel">
-        <img src="~@/assets/img/banner1.jpg" alt="slide" class="img_cover" />
+        <img src="~@/assets/img/banner4.jpg" alt="slide" class="img_cover" />
       </div>
       <div class="carousel">
-        <img src="~@/assets/img/banner2.jpg" alt="slide" class="img_cover" />
+        <img src="~@/assets/img/banner5.jpg" alt="slide" class="img_cover" />
       </div>
       <div class="carousel">
         <img src="~@/assets/img/banner3.jpg" alt="slide" class="img_cover" />
@@ -54,7 +42,12 @@ export default {
 <style lang='less' scoped>
 .carousel {
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 80px);
+
+    // width: 100%;
+    // height: 0;
+    // padding-bottom: 56.25%; /* 16:9 */
+    // position: relative;
 }
 
 .ant-carousel /deep/ .custom-slick-arrow {

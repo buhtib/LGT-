@@ -74,10 +74,10 @@ module.exports = {
         disableHostCheck: true,
         proxy: {
             "/": {
-                "target": "http://192.168.31.50:8000",
+                "target": "http://192.168.31.80",
                 "changeOrigin": true, //是否跨域
-                ws: false,
-                port: 8081, // 端口
+                ws: false, //  是否代理websockets
+                // port: 8081, // 端口
                 pathRewrite: {
                     '^/': ''
                 }
